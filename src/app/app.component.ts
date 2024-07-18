@@ -9,11 +9,15 @@ import { StrikeRateComponent } from './strike-rate/strike-rate.component';
 import { WktsMatchComponent } from './wkts-match/wkts-match.component';
 import { WicketsOpponentBarComponent } from './wickets-opponent-bar/wickets-opponent-bar.component';
 import { CumulativeAveLineComponent } from './cumulative-ave-line/cumulative-ave-line.component';
+import { AngularLogoComponent } from "./angular-logo/angular-logo.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,
+  imports: [
+    CommonModule,
+    RouterOutlet,
     EconomyRateComponent,
     StrikeRateComponent,
     WktsMatchComponent,
@@ -22,8 +26,10 @@ import { CumulativeAveLineComponent } from './cumulative-ave-line/cumulative-ave
     AveStrikeMultiAxisLineComponent,
     AveStrikeMultiAxisLineComponent,
     WicketsOpponentBarComponent,
-    CumulativeAveLineComponent
-  ],
+    CumulativeAveLineComponent,
+    AngularLogoComponent,
+    FooterComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

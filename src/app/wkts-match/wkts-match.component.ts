@@ -83,7 +83,7 @@ export class WktsMatchComponent {
     plugins: {
       title: {
         display: true,
-        text: 'Cumulative wickets per match'
+        text: 'Wickets per Test match'
       },
       subtitle: {
         display: true,
