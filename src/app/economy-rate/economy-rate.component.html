@@ -1,0 +1,7 @@
+@if (loaded()) {
+<div class="chart">
+  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingEconomyData.datasets"
+    [labels]="bowlingEconomyData.labels" [options]="lineChartOptions">
+  </canvas>
+</div>
+}

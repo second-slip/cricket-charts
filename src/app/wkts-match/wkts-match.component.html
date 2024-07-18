@@ -1,0 +1,9 @@
+@if (loaded()) {
+<div class="chart">
+  <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
+    [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
+  </canvas>
+</div>
+
+<button (click)="toggleBar()">{{btnText()}}</button>
+}

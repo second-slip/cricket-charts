@@ -1,0 +1,13 @@
+@if (loaded()) {
+<div class="chart">
+  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingStrikeData.datasets" [labels]="bowlingStrikeData.labels"
+    [options]="lineChartOptions" [plugins]="chartPlugins">
+  </canvas>
+</div>
+
+<button (click)="remove()">remove</button>
+
+}
+
+
+<p>ideas: hide initial 'outlier' values........remove data from 2003, first 5 Tests (first 8 values)</p>
