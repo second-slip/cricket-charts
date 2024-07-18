@@ -3,18 +3,20 @@ import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
 import { DataFetchService } from '../data-fetch.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-wkts-match',
   standalone: true,
-  imports: [BaseChartDirective],
+  imports: [BaseChartDirective, MatButtonModule, MatIconModule],
   templateUrl: './wkts-match.component.html',
   styleUrl: './wkts-match.component.css'
 })
 export class WktsMatchComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
-  public btnText = signal('show 5w count');
+  public btnText = signal('Hide wickets');
   public loaded = signal(false);
 
   public formatAnalysisData: IChartData = {  // ChartData<'bar'>
@@ -65,11 +67,11 @@ export class WktsMatchComponent {
     if (this.formatAnalysisData.chartData[0].hidden) {
       this.formatAnalysisData.chartData[0].hidden = false;
       this.chart?.update();
-      this.btnText.set('hide 5w count');
+      this.btnText.set('Hide wickets');
     } else {
       this.formatAnalysisData.chartData[0].hidden = true;
       this.chart?.update();
-      this.btnText.set('show 5w count');
+      this.btnText.set('Show wickets');
     }
   }
 

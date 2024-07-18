@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 .chart {
     width: 100%;
 }
@@ -6,5 +8,26 @@
 .divider {
     margin: 3% 0%;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.alert {
+    padding: 2%;
+    color: black;
+    font-size: larger;
+}
+
+.strong-title {
+    padding-right: 1%;
+}
+
+.alert-danger {
+    background-color: #f44336;
+}
+
+.alert-success {
+    background-color: #77ff33;
+}
+
+.alert-info {
+    background-color: #efef85;  
+    /* 'Robin egg blue' */
+}

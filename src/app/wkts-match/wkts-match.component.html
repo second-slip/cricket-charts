@@ -5,5 +5,12 @@
   </canvas>
 </div>
 
-<button (click)="toggleBar()">{{btnText()}}</button>
+<section>
+  <div class="alert alert-info icon-text">
+    <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="info_outline"></mat-icon>
+      Hiding the wicket count bars shows the cumulative trend more clearly (on a smaller scale).
+
+  </div>
+</section>
 }
