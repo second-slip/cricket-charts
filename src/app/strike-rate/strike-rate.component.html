@@ -5,9 +5,11 @@
   </canvas>
 </div>
 
-<button (click)="remove()">remove</button>
-
+<section>
+  <div class="alert alert-info icon-text">
+    <button mat-flat-button (click)="focusAxis()">{{btnText()}}</button>
+      <mat-icon class="info-icon" aria-hidden="false" aria-label="information icon" fontIcon="info_outline"></mat-icon>
+      Focus the y-axis scale to a minimum of 53 to see the cumulative trend more clearly (on a smaller scale).
+  </div>
+</section>
 }
-
-
-<p>ideas: hide initial 'outlier' values........remove data from 2003, first 5 Tests (first 8 values)</p>

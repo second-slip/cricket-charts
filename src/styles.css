@@ -31,3 +31,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #efef85;  
     /* 'Robin egg blue' */
 }
+
+.icon-text {
+    display: flex;
+    align-items: center;
+}
+
+.info-icon {
+    margin-left: 1%;
+    margin-right: 0.5%;
+}

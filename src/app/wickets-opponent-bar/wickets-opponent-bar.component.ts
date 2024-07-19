@@ -4,11 +4,13 @@ import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFetchService } from '../data-fetch.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-wickets-opponent-bar',
   standalone: true,
-  imports: [BaseChartDirective],
+  imports: [BaseChartDirective, MatButtonModule, MatIconModule],
   templateUrl: './wickets-opponent-bar.component.html',
   styleUrl: './wickets-opponent-bar.component.css'
 })

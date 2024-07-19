@@ -1,21 +1,27 @@
 import { Component, OnInit, signal, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartData } from 'chart.js';
+import { Chart, ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFetchService } from '../data-fetch.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-strike-rate',
   standalone: true,
-  imports: [BaseChartDirective],
+  imports: [BaseChartDirective, MatButtonModule, MatIconModule],
   templateUrl: './strike-rate.component.html',
   styleUrl: './strike-rate.component.css'
 })
 export class StrikeRateComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  private axis = signal(15);
+
   public chartPlugins = [ChartDataLabels];
   public loaded = signal(false);
+  public btnText = signal('Focus axis');
 
   public bowlingStrikeData: ChartData<'line'> = {
     labels: [],
@@ -47,9 +53,44 @@ export class StrikeRateComponent implements OnInit {
     this.loaded.set(true);
   }
 
-  public remove(): void {
-    // this.data.chartData[0].data.splice(0, 14);
-    // this.data.chartLabels.splice(0, 14);
+  public focusAxis(): void {
+    if (this.axis() === 53) {
+      this.axis.set(15);
+      this.btnText.set('Focus axis');
+    } else {
+      this.axis.set(53);
+      this.btnText.set('Reset axis');
+    }
+    this.lineChartOptions = {
+      scales: {
+        y: {
+          min: this.axis()
+        }
+      },
+      responsive: true,
+      plugins: {
+        datalabels: {
+          borderRadius: 4,
+          color: 'black',
+          // font: {
+          //   weight: 'bold'
+          // },
+          padding: 6,
+          align: 'start',
+          anchor: 'start',
+          formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
+        },
+        title: {
+          display: true,
+          text: 'JM Anderson'
+        },
+        subtitle: {
+          display: true,
+          text: 'Strike rate',
+        }
+      }
+    };
+
     this.chart?.update();
   }
 
@@ -60,21 +101,10 @@ export class StrikeRateComponent implements OnInit {
       datalabels: {
         borderRadius: 4,
         color: 'black',
-        // font: {
-        //   weight: 'bold'
-        // },
         padding: 6,
         align: 'start',
         anchor: 'start',
         formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
-        // {
-        //   // console.log(ctx.dataIndex)
-        //   if (ctx.dataIndex === this.data.chartData[0].data.length - 1) {
-        //     return val;
-        //   } else {
-        //     return '';
-        //   }
-        // }
       },
       title: {
         display: true,
@@ -83,13 +113,6 @@ export class StrikeRateComponent implements OnInit {
       subtitle: {
         display: true,
         text: 'Strike rate',
-        // color: 'blue',
-        // font: {
-        //   size: 12,
-        //   family: 'tahoma',
-        //   weight: 'normal',
-        //   style: 'italic'
-        // }
       }
     }
   };
