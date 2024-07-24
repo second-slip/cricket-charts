@@ -43,29 +43,12 @@ body {
     /* 'Robin egg blue' */
 }
 
-
-/* Small devices (up to 768px) */
-@media only screen and (max-width: 768px) {
-    .icon-text {
-        display: flex;
-        align-items: center;
-    }
-
-    .info-icon {
-        margin-left: 1%;
-        margin-right: 0.5%;
-    }
+.icon-text {
+    display: flex;
+    align-items: center;
 }
 
-/* Larger devices (769px and up) */
-@media only screen and (min-width: 769px) {
-    .icon-text {
-        display: flex;
-        align-items: center;
-    }
-
-    .info-icon {
-        margin-left: 1%;
-        margin-right: 0.5%;
-    }
+.info-icon {
+    margin-left: 1%;
+    margin-right: 0.5%;
 }
