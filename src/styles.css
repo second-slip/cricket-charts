@@ -23,7 +23,7 @@ body {
 .alert {
     padding: 2%;
     color: black;
-    /* font-size: larger; */
+    font-size: smaller;
 }
 
 .strong-title {
@@ -51,4 +51,18 @@ body {
 .info-icon {
     margin-left: 1%;
     margin-right: 0.5%;
+}
+
+/* Small devices (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .info-icon {
+        visibility: hidden;
+    }
+}
+
+/* Larger devices (769px and up) */
+@media only screen and (min-width: 769px) {
+    .info-icon {
+        visibility: visible;
+    }
 }
