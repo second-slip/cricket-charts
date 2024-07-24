@@ -1,5 +1,6 @@
-<p>The red colour series shows the cumulative average after the age of 35 years age.</p>
 @if (loaded()) {
+  <h3 class="centre">Bowling average with age analysis</h3>
+
 <div class="chart">
   <canvas baseChart [type]="'line'" [legend]="true" [datasets]="ageAnalysisData.datasets"
     [labels]="ageAnalysisData.labels" [options]="lineChartOptions">

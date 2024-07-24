@@ -1,8 +1,19 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .chart {
     width: 100%;
+}
+
+.centre {
+    text-align: center;
 }
 
 .divider {
@@ -12,7 +23,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .alert {
     padding: 2%;
     color: black;
-    font-size: larger;
+    /* font-size: larger; */
 }
 
 .strong-title {
@@ -28,16 +39,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .alert-info {
-    background-color: #efef85;  
+    background-color: #efef85;
     /* 'Robin egg blue' */
 }
 
-.icon-text {
-    display: flex;
-    align-items: center;
+
+/* Small devices (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .icon-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .info-icon {
+        margin-left: 1%;
+        margin-right: 0.5%;
+    }
 }
 
-.info-icon {
-    margin-left: 1%;
-    margin-right: 0.5%;
+/* Larger devices (769px and up) */
+@media only screen and (min-width: 769px) {
+    .icon-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .info-icon {
+        margin-left: 1%;
+        margin-right: 0.5%;
+    }
 }

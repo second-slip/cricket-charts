@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
@@ -12,17 +12,24 @@ import { DataFetchService } from '../data-fetch.service';
   styleUrl: './format-analysis-line.component.css'
 })
 export class FormatAnalysisLineComponent {
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+    this.chart?.chart?.resize();
+  }
+  
   public loaded = signal(false);
   public formatAnalysisData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
         data: [],
-        label: 'pre-Test specialisation'
+        label: 'All-formats player'
       },
       {
         data: [],
-        label: 'post-Test specialisation'
+        label: 'First-class only player'
       },
     ]
   };
@@ -71,7 +78,7 @@ export class FormatAnalysisLineComponent {
     plugins: {
       title: {
         display: true,
-        text: 'Bowling cumulative average pre- & post- first-class specialisation'
+        text: 'Cumulative average pre- & post- first-class specialisation'
       },
       subtitle: {
         display: true,

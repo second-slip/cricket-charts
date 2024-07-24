@@ -1,4 +1,4 @@
-import { Component, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
@@ -15,6 +15,11 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class WktsMatchComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+     this.chart?.chart?.resize();
+  }
 
   public btnText = signal('Hide wickets');
   public loaded = signal(false);
@@ -33,7 +38,7 @@ export class WktsMatchComponent {
       },
       {
         data: [],
-        label: 'cumul wickets per match',
+        label: 'cumulative trend',
         // borderColor: Utils.CHART_COLORS.blue,
         // backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
         type: 'line',

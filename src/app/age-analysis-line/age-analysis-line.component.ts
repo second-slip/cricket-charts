@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
@@ -13,6 +13,13 @@ import { map } from 'rxjs';
   styleUrl: './age-analysis-line.component.css'
 })
 export class AgeAnalysisLineComponent {
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+    this.chart?.chart?.resize();
+  }
+
   public loaded = signal(false);
   public ageAnalysisData: ChartData<'line'> = {
     labels: [],
@@ -55,7 +62,7 @@ export class AgeAnalysisLineComponent {
       .subscribe({
         next: (data: IChartData) => {
           this.ageAnalysisData.labels = data.chartLabels
-            this.ageAnalysisData.datasets[0].data = data.chartData[0],
+          this.ageAnalysisData.datasets[0].data = data.chartData[0],
             this.ageAnalysisData.datasets[1].data = data.chartData[1]
         },
         error: (e) => { console.log(e); }
@@ -87,7 +94,7 @@ export class AgeAnalysisLineComponent {
     plugins: {
       title: {
         display: true,
-        text: 'Bowling moving average pre- and post-35 years old'
+        text: 'Cumulative average pre- and post-35 years old'
       },
       subtitle: {
         display: true,

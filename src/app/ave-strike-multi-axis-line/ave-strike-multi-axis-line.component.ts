@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, HostListener, OnInit, signal, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
@@ -13,6 +13,13 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrl: './ave-strike-multi-axis-line.component.css'
 })
 export class AveStrikeMultiAxisLineComponent implements OnInit {
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+    this.chart?.chart?.resize();
+  }
+  
   public chartPlugins = [ChartDataLabels];
   public loaded = signal(false);
 

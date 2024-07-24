@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, signal, ViewChild } from '@angular/core';
 import { Chart, ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
@@ -16,6 +16,11 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class StrikeRateComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+     this.chart?.chart?.resize();
+  }
 
   private axis = signal(15);
 
@@ -96,6 +101,10 @@ export class StrikeRateComponent implements OnInit {
 
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+    // onResize: () => {
+    //   alert('k')
+    //   this.chart?.chart?.resize();//.update();
+    // },
     responsive: true,
     plugins: {
       datalabels: {

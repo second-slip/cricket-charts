@@ -1,5 +1,7 @@
+
 @if (loaded()) {
 <div class="chart">
+    <h3 class="centre">Wickets per match</h3>
   <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
     [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
   </canvas>

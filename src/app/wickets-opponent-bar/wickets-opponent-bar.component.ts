@@ -1,4 +1,4 @@
-import { Component, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
@@ -16,8 +16,14 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class WicketsOpponentBarComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+    this.chart?.chart?.resize();
+  }
+
   public chartPlugins = [ChartDataLabels];
-  public btnText = signal('show 5w count');
+  public btnText = signal('Show 5w count');
   public loaded = signal(false);
 
   public wicketsData: ChartData<'bar'> = {
@@ -65,11 +71,11 @@ export class WicketsOpponentBarComponent {
     if (this.wicketsData?.datasets[2].hidden) {
       this.wicketsData.datasets[2].hidden = false;
       this.chart?.update();
-      this.btnText.set('hide 5w count');
+      this.btnText.set('Hide 5w count');
     } else {
       this.wicketsData.datasets[2].hidden = true;
       this.chart?.update();
-      this.btnText.set('show 5w count');
+      this.btnText.set('Show 5w count');
     }
   }
 

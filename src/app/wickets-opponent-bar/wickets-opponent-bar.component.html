@@ -1,4 +1,6 @@
 @if (loaded()) {
+<h3 class="centre">Matches & wickets taken by opponent</h3>
+
 <div class="graph">
     <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="wicketsData.datasets" [labels]="wicketsData.labels"
         [options]="barChartOptions" [plugins]="chartPlugins">

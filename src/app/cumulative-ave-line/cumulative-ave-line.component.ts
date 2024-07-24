@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
@@ -13,6 +13,12 @@ import { DataFetchService } from '../data-fetch.service';
 })
 export class CumulativeAveLineComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+     this.chart?.chart?.resize();
+  }
+  
   public loaded = signal(false);
 
   public bowlingAverageData: ChartData<'line'> = {

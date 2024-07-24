@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
@@ -12,6 +12,13 @@ import { DataFetchService } from '../data-fetch.service';
   styleUrl: './economy-rate.component.css'
 })
 export class EconomyRateComponent {
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize() {
+    this.chart?.chart?.resize();
+  }
+  
   public loaded = signal(false);
 
   public bowlingEconomyData: ChartData<'line'> = {

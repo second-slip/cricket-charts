@@ -1,4 +1,6 @@
 @if (loaded()) {
+<h3 class="centre">Combined bowling average and strike rate</h3>
+
 <div class="chart">
     <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingAverageStrikeData.datasets"
         [labels]="bowlingAverageStrikeData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">

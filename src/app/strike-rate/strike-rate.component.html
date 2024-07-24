@@ -1,15 +1,17 @@
 @if (loaded()) {
+<h3 class="centre">Strike rate</h3>
+
 <div class="chart">
-  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingStrikeData.datasets" [labels]="bowlingStrikeData.labels"
-    [options]="lineChartOptions" [plugins]="chartPlugins">
+  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingStrikeData.datasets"
+    [labels]="bowlingStrikeData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
   </canvas>
 </div>
 
 <section>
-  <div class="alert alert-info icon-text">
+  <p class="alert alert-info icon-text">
     <button mat-flat-button (click)="focusAxis()">{{btnText()}}</button>
-      <mat-icon class="info-icon" aria-hidden="false" aria-label="information icon" fontIcon="info_outline"></mat-icon>
-      Focus the y-axis scale to a minimum of 53 to see the cumulative trend more clearly (on a smaller scale).
-  </div>
+    <mat-icon class="info-icon" aria-hidden="false" aria-label="information icon" fontIcon="info_outline"></mat-icon>
+    Focus the y-axis scale to a new minimum of 53.  The smaller scale shows the trend more clearly.
+  </p>
 </section>
 }
