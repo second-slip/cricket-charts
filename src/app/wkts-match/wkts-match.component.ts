@@ -29,7 +29,7 @@ export class WktsMatchComponent {
     chartData: [
       {
         data: [],
-        label: 'wickets per match',
+        label: 'wickets in match',
         // borderColor: Utils.CHART_COLORS.red,
         // backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
         // stack: 'combined',

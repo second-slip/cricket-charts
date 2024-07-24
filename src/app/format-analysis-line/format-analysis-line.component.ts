@@ -60,7 +60,6 @@ export class FormatAnalysisLineComponent {
       //   ))
       .subscribe({
         next: (data: IChartData) => {
-          console.log(data)
           this.formatAnalysisData.labels = data.chartLabels
           this.formatAnalysisData.datasets[0].data = data.chartData[0],
             this.formatAnalysisData.datasets[1].data = data.chartData[1]
