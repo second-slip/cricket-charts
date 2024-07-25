@@ -20,7 +20,7 @@ export class StrikeRateComponent implements OnInit {
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-     this.chart?.chart?.resize();
+    this.chart?.chart?.resize();
   }
 
   private axis = signal(15);
@@ -88,11 +88,11 @@ export class StrikeRateComponent implements OnInit {
         },
         title: {
           display: true,
-          text: 'JM Anderson'
+          text: 'Strike rate'
         },
         subtitle: {
           display: true,
-          text: 'Strike rate',
+          text: 'JM Anderson',
         }
       }
     };
@@ -118,11 +118,11 @@ export class StrikeRateComponent implements OnInit {
       },
       title: {
         display: true,
-        text: 'JM Anderson'
+        text: 'Strike rate'
       },
       subtitle: {
         display: true,
-        text: 'Strike rate',
+        text: 'JM Anderson',
       }
     }
   };
