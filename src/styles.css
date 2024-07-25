@@ -21,6 +21,7 @@ body {
 }
 
 .alert {
+    flex-wrap: wrap;
     padding: 2%;
     color: black;
     font-size: smaller;
