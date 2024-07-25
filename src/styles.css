@@ -56,6 +56,14 @@ body {
 
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 768px) {
+    .small-screen-warning {
+        text-align: center;
+        font-weight: bold;
+        position: sticky;
+        top: 0px;
+        padding: 10px 0px;
+    }
+
     .info-icon {
         visibility: hidden;
     }
@@ -63,6 +71,10 @@ body {
 
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 769px) {
+    .small-screen-warning {
+        display: none;
+    }
+
     .info-icon {
         visibility: visible;
     }

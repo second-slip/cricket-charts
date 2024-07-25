@@ -11,6 +11,7 @@ import { WicketsOpponentBarComponent } from './wickets-opponent-bar/wickets-oppo
 import { CumulativeAveLineComponent } from './cumulative-ave-line/cumulative-ave-line.component';
 import { AngularLogoComponent } from "./angular-logo/angular-logo.component";
 import { FooterComponent } from "./footer/footer.component";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,8 @@ import { FooterComponent } from "./footer/footer.component";
     WicketsOpponentBarComponent,
     CumulativeAveLineComponent,
     AngularLogoComponent,
-    FooterComponent
+    FooterComponent,
+    MatIconModule
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
