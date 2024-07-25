@@ -55,7 +55,12 @@ body {
 }
 
 /* Small devices (up to 768px) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 666px) {
+    .container {
+        margin: 2% 1% 5%;
+        /* top / right/left / bottom */
+    }
+
     .small-screen-warning {
         text-align: center;
         font-weight: bold;
@@ -70,7 +75,12 @@ body {
 }
 
 /* Larger devices (769px and up) */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 667px) {
+    .container {
+        margin: 2% 10% 5%;
+        /* top / right/left / bottom */
+    }
+    
     .small-screen-warning {
         display: none;
     }
