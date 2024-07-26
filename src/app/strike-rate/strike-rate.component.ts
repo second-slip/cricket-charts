@@ -6,7 +6,6 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFetchService } from '../data-fetch.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-strike-rate',
@@ -47,7 +46,7 @@ export class StrikeRateComponent implements OnInit {
 
   private _getData(): void {
     this._service.getCumulativeStrikeRateSeries()
-      .pipe(tap(x => console.log(x.chartData[0].length)))
+      // .pipe(tap(x => console.log(x.chartData[0].length)))
       .subscribe({
         next: (data: IChartData) => {
           this.bowlingStrikeData.labels = data.chartLabels,

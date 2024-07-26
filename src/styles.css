@@ -95,8 +95,25 @@ body {
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 769px) {
     .container {
-        padding-top: 6%;
+        padding-top: 9%;
         margin: 2% 10% 5%;
+        /* top / right/left / bottom */
+    }
+
+    .small-screen-warning {
+        display: none;
+    }
+
+    .info-icon {
+        visibility: visible;
+    }
+}
+
+/* Larger devices (769px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        padding-top: 6%;
+        margin: 2% 14% 5%;
         /* top / right/left / bottom */
     }
 
