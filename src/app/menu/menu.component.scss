@@ -1,13 +1,7 @@
-mat-toolbar {
-    min-height: 80px;
-    height: 80px;
-}
-
 .nav-menu {
     display: flex;
     position: fixed;
-    padding: 0% 20%;
-    z-index: 9999;
+    z-index: 1;
     top: 0;
 }
 
@@ -20,50 +14,75 @@ mat-toolbar {
     font-size: medium;
 }
 
-.action-buttons, .github-icon-button {
-    display: flex;
-    align-items: center;
-}
-
 .activebutton {
-    // background-color: rgb(51, 51, 51);
     // color: white;
-    text-decoration: underline;
+    // text-decoration: underline;
+    background-color: beige
 }
-
-
 
 @media only screen and (max-width: 768px) {
+    .larger-screen-menu {
+        display: none;
+    }
+
     .nav-menu {
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 3% 0%;
-    }
-
-    .action-button {
-        width: 23px;
-        height: 23px;
-        line-height: 23px;
-        min-height: 23px;
-        vertical-align: top;
-        font-size: 13px;
-        padding: 0 0;
-        margin: 0;
-    }
-
-    .github-icon-button {
-        display: none;
-    }
-
-    .full {
-        display: none;
+        padding: 0% 10%;
     }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 769px) {
-    .abridge {
+    .smaller-screen-collapse-menu {
         display: none;
     }
+
+    .nav-menu {
+        padding: 0% 15%;
+    }
 }
+
+
+
+
+
+// .action-buttons, .github-icon-button {
+//     display: flex;
+//     align-items: center;
+// }
+
+
+
+
+// @media only screen and (max-width: 768px) {
+//     .nav-menu {
+//         align-items: center;
+//         justify-content: center;
+//         flex-direction: column;
+//         padding: 3% 0%;
+//     }
+
+//     .action-button {
+//         width: 23px;
+//         height: 23px;
+//         line-height: 23px;
+//         min-height: 23px;
+//         vertical-align: top;
+//         font-size: 13px;
+//         padding: 0 0;
+//         margin: 0;
+//     }
+
+//     .github-icon-button {
+//         display: none;
+//     }
+
+//     .full {
+//         display: none;
+//     }
+// }
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 769px) {
+//     .abridge {
+//         display: none;
+//     }
+// }

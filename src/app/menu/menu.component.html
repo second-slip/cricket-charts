@@ -1,4 +1,78 @@
 <mat-toolbar class="nav-menu">
+
+    <a mat-button class="title-button" aria-label="title-button" routerLink="/">Cricket Charts</a>
+    <!-- <span class="title">Cricket Charts</span> -->
+    <!-- <a mat-button class="action-button" aria-label="..." routerLink="about" routerLinkActive="activebutton"
+        [routerLinkActiveOptions]="{ exact: true }">Charts</a> -->
+
+    <span class="example-spacer"></span>
+
+    <section class="larger-screen-menu">
+
+        <a mat-button class="action-button" aria-label="..." routerLink="/" routerLinkActive="activebutton"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon>leaderboard</mat-icon>
+            <span>Charts</span>
+        </a>
+
+        <a mat-button class="action-button" aria-label="..." routerLink="ideas" routerLinkActive="activebutton"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon>lightbulb</mat-icon>
+            <span>Ideas</span>
+        </a>
+
+    </section>
+
+    <!-- <a mat-button class="action-button" aria-label="..." routerLink="about" routerLinkActive="activebutton"
+        [routerLinkActiveOptions]="{ exact: true }">Charts</a> -->
+
+    <!-- <a mat-button class="action-button" aria-label="..." routerLink="about" routerLinkActive="activebutton"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>leaderboard</mat-icon>
+        <span>Charts</span>
+    </a> -->
+
+    <!-- <a mat-button class="action-button" aria-label="..." routerLink="about" routerLinkActive="activebutton"
+        [routerLinkActiveOptions]="{ exact: true }">Future</a> -->
+
+
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button> -->
+
+    <section class="smaller-screen-collapse-menu">
+
+        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item class="action-button" aria-label="..." routerLink="/" routerLinkActive="activebutton"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <mat-icon>leaderboard</mat-icon>
+                <span>Charts</span>
+            </a>
+
+            <a mat-menu-item class="action-button" aria-label="..." routerLink="ideas" routerLinkActive="activebutton"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <mat-icon>lightbulb</mat-icon>
+                <span>Ideas</span>
+            </a>
+
+            <!-- <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+            </button> -->
+
+        </mat-menu>
+    </section>
+
+</mat-toolbar>
+<!-- <mat-toolbar class="nav-menu">
     <div>
         <a mat-button class="title-button" aria-label="title-button" routerLink="/">Cricket Charts</a>
     </div>
@@ -8,8 +82,8 @@
     <div class="action-buttons">
         <a mat-button class="action-button" aria-label="..." routerLink="about" routerLinkActive="activebutton"
             [routerLinkActiveOptions]="{ exact: true }">About</a>
-        <a mat-button class="action-button" aria-label="..." routerLink="code" routerLinkActive="activebutton">Code</a>
-        <!-- <a mat-button class="action-button full" aria-label="..." routerLink="miscellany"
+        <a mat-button class="action-button" aria-label="..." routerLink="code" routerLinkActive="activebutton">Code</a> -->
+<!-- <a mat-button class="action-button full" aria-label="..." routerLink="miscellany"
             routerLinkActive="activebutton">Miscellany</a>
         <a mat-button class="action-button abridge" aria-label="..." routerLink="miscellany"
             routerLinkActive="activebutton">Misc</a>
@@ -17,5 +91,5 @@
             target="_blank">
             <img src=".\assets\github-mark.png" alt="GitHub icon" />
         </a> -->
-    </div>
-</mat-toolbar>
+<!-- </div>
+</mat-toolbar> -->
