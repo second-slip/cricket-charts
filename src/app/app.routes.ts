@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
-import { WktsMatchComponent } from './wkts-match/wkts-match.component';
+import { ChartsComponent } from './charts/charts.component';
+import { IdeasComponent } from './ideas/ideas.component';
 
 export const routes: Routes = [
     // { path: '', redirectTo: '/', pathMatch: 'full' },
-    // { path: '', component: WktsMatchComponent, pathMatch: 'full' },
-    // { path: 'home', component: HomeComponent, pathMatch: 'full' },
-    // { path: 'about', component: AboutComponent, pathMatch: 'full' },
-    // { path: 'code', component: BlogComponent, pathMatch: 'full' },
-    // { path: 'miscellany', component: MiscellanyComponent, pathMatch: 'full' },
-    // { path: '**', redirectTo: '' }
+    { path: '', component: ChartsComponent, pathMatch: 'full' },
+    { path: 'home', component: ChartsComponent, pathMatch: 'full' },
+    { path: 'ideas', component: IdeasComponent, pathMatch: 'full' },
+    { path: '**', redirectTo: '' }
 ];
