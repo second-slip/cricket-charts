@@ -57,6 +57,7 @@ body {
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 666px) {
     .container {
+        padding-top: 15%;
         margin: 2% 1% 5%;
         /* top / right/left / bottom */
     }
@@ -77,10 +78,28 @@ body {
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 667px) {
     .container {
+        padding-top: 9%;
         margin: 2% 10% 5%;
         /* top / right/left / bottom */
     }
-    
+
+    .small-screen-warning {
+        display: none;
+    }
+
+    .info-icon {
+        visibility: visible;
+    }
+}
+
+/* Larger devices (769px and up) */
+@media only screen and (min-width: 769px) {
+    .container {
+        padding-top: 6%;
+        margin: 2% 10% 5%;
+        /* top / right/left / bottom */
+    }
+
     .small-screen-warning {
         display: none;
     }

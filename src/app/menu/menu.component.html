@@ -1,0 +1,21 @@
+<mat-toolbar class="nav-menu">
+    <div>
+        <a mat-button class="title-button" aria-label="title-button" routerLink="/">Cricket Charts</a>
+    </div>
+
+    <span class="example-spacer"></span>
+
+    <div class="action-buttons">
+        <a mat-button class="action-button" aria-label="..." routerLink="about" routerLinkActive="activebutton"
+            [routerLinkActiveOptions]="{ exact: true }">About</a>
+        <a mat-button class="action-button" aria-label="..." routerLink="code" routerLinkActive="activebutton">Code</a>
+        <!-- <a mat-button class="action-button full" aria-label="..." routerLink="miscellany"
+            routerLinkActive="activebutton">Miscellany</a>
+        <a mat-button class="action-button abridge" aria-label="..." routerLink="miscellany"
+            routerLinkActive="activebutton">Misc</a>
+        <a mat-icon-button class="github-icon-button" aria-label="..." href="https://github.com/second-slip"
+            target="_blank">
+            <img src=".\assets\github-mark.png" alt="GitHub icon" />
+        </a> -->
+    </div>
+</mat-toolbar>

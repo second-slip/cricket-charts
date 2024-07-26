@@ -12,6 +12,7 @@ import { CumulativeAveLineComponent } from './cumulative-ave-line/cumulative-ave
 import { AngularLogoComponent } from "./angular-logo/angular-logo.component";
 import { FooterComponent } from "./footer/footer.component";
 import { MatIconModule } from '@angular/material/icon';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-root',
@@ -30,8 +31,9 @@ import { MatIconModule } from '@angular/material/icon';
     CumulativeAveLineComponent,
     AngularLogoComponent,
     FooterComponent,
-    MatIconModule
-],
+    MatIconModule,
+    MenuComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
