@@ -17,7 +17,7 @@ body {
 }
 
 .divider {
-    margin: 3% 0%;
+    margin: 5% 0%;
 }
 
 .underline {
@@ -48,7 +48,7 @@ body {
 }
 
 .alert-info {
-    background-color: #efef85;
+    background-color: beige;
     /* 'Robin egg blue' */
 }
 

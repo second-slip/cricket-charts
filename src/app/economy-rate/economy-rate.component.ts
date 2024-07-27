@@ -53,14 +53,10 @@ export class EconomyRateComponent {
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
+    devicePixelRatio: 4,
     plugins: {
-      title: {
-        display: true,
-        text: 'Economy rate'
-      },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson'
+      legend: {
+        position: 'bottom'
       }
     }
   };

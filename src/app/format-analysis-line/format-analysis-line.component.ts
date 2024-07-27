@@ -74,22 +74,19 @@ export class FormatAnalysisLineComponent {
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
+    devicePixelRatio: 4,
     plugins: {
-      title: {
-        display: true,
-        text: 'Cumulative average pre- & post- first-class specialisation'
-      },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson',
-        // color: 'blue',
-        // font: {
-        //   size: 12,
-        //   family: 'tahoma',
-        //   weight: 'normal',
-        //   style: 'italic'
-        // }
+      legend: {
+        position: 'bottom'
       }
+      // title: {
+      //   display: true,
+      //   text: 'Cumulative average pre- & post- first-class specialisation'
+      // },
+      // subtitle: {
+      //   display: true,
+      //   text: 'JM Anderson',
+      // }
     }
   };
 }

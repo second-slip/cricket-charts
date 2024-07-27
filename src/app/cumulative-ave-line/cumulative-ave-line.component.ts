@@ -30,7 +30,7 @@ export class CumulativeAveLineComponent {
       },
       {
         data: [],
-        label: 'moving cumulative'
+        label: '3-point moving cumulative average'
       },
     ]
   };
@@ -58,15 +58,19 @@ export class CumulativeAveLineComponent {
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
+    devicePixelRatio: 4,
     plugins: {
-      title: {
-        display: true,
-        text: 'Cumulative bowling average'
-      },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson',
+      legend: {
+        position: 'bottom'
       }
+      // title: {
+      //   display: true,
+      //   text: 'Cumulative bowling average'
+      // },
+      // subtitle: {
+      //   display: true,
+      //   text: 'JM Anderson',
+      // }
     }
   };
 }

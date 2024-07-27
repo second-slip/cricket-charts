@@ -33,7 +33,7 @@ export class StrikeRateComponent implements OnInit {
     datasets: [
       {
         data: [],
-        label: 'cumulative strke rate'
+        label: 'cumulative strike rate'
       }
     ]
   };
@@ -73,7 +73,11 @@ export class StrikeRateComponent implements OnInit {
         }
       },
       responsive: true,
+      devicePixelRatio: 4,
       plugins: {
+        legend: {
+          position: 'bottom'
+        },
         datalabels: {
           borderRadius: 4,
           color: 'black',
@@ -85,14 +89,14 @@ export class StrikeRateComponent implements OnInit {
           anchor: 'start',
           formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
         },
-        title: {
-          display: true,
-          text: 'Strike rate'
-        },
-        subtitle: {
-          display: true,
-          text: 'JM Anderson',
-        }
+        // title: {
+        //   display: true,
+        //   text: 'Strike rate'
+        // },
+        // subtitle: {
+        //   display: true,
+        //   text: 'JM Anderson',
+        // }
       }
     };
 
@@ -105,8 +109,12 @@ export class StrikeRateComponent implements OnInit {
     //   alert('k')
     //   this.chart?.chart?.resize();//.update();
     // },
+    devicePixelRatio: 4,
     responsive: true,
     plugins: {
+      legend: {
+        position: 'bottom'
+      },
       datalabels: {
         borderRadius: 4,
         color: 'black',
@@ -115,14 +123,14 @@ export class StrikeRateComponent implements OnInit {
         anchor: 'start',
         formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
       },
-      title: {
-        display: true,
-        text: 'Strike rate'
-      },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson',
-      }
+      // title: {
+      //   display: true,
+      //   text: 'Strike rate'
+      // },
+      // subtitle: {
+      //   display: true,
+      //   text: 'JM Anderson',
+      // }
     }
   };
 }

@@ -23,7 +23,7 @@ export class WicketsOpponentBarComponent {
   }
 
   public chartPlugins = [ChartDataLabels];
-  public btnText = signal('Show 5w count');
+  public btnText = signal('Show 5w');
   public loaded = signal(false);
 
   public wicketsData: ChartData<'bar'> = {
@@ -71,37 +71,34 @@ export class WicketsOpponentBarComponent {
     if (this.wicketsData?.datasets[2].hidden) {
       this.wicketsData.datasets[2].hidden = false;
       this.chart?.update();
-      this.btnText.set('Hide 5w count');
+      this.btnText.set('Hide 5w');
     } else {
       this.wicketsData.datasets[2].hidden = true;
       this.chart?.update();
-      this.btnText.set('Show 5w count');
+      this.btnText.set('Show 5w');
     }
   }
 
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
+    devicePixelRatio: 4,
     indexAxis: 'y',
     plugins: {
       datalabels: {
         align: 'end',
         anchor: 'end'
       },
-      title: {
-        display: true,
-        text: 'Matches and wickets taken by opponent'
-      },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson',
-        // color: 'blue',
-        // font: {
-        //   size: 12,
-        //   family: 'tahoma',
-        //   weight: 'normal',
-        //   style: 'italic'
-        // }
+      legend: {
+        position: 'bottom'
       }
+      // title: {
+      //   display: true,
+      //   text: 'Matches and wickets taken by opponent'
+      // },
+      // subtitle: {
+      //   display: true,
+      //   text: 'JM Anderson',
+      // }
     }
   };
 }

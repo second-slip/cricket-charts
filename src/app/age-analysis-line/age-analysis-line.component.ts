@@ -26,11 +26,11 @@ export class AgeAnalysisLineComponent {
     datasets: [
       {
         data: [],
-        label: 'up to 35'
+        label: 'up to 35 years old'
       },
       {
         data: [],
-        label: '35+'
+        label: 'over 35 years old'
       },
     ]
   };
@@ -91,22 +91,19 @@ export class AgeAnalysisLineComponent {
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
+    devicePixelRatio: 4,
     plugins: {
-      title: {
-        display: true,
-        text: 'Cumulative average pre- and post-35 years old'
-      },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson',
-        // color: 'blue',
-        // font: {
-        //   size: 12,
-        //   family: 'tahoma',
-        //   weight: 'normal',
-        //   style: 'italic'
-        // }
+      legend: {
+        position: 'bottom'
       }
+      // title: {
+      //   display: true,
+      //   text: 'Cumulative average pre- and post-35 years old'
+      // },
+      // subtitle: {
+      //   display: true,
+      //   text: 'JM Anderson',
+      // }
     }
   };
 }

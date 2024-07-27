@@ -18,7 +18,7 @@ export class WktsMatchComponent {
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-     this.chart?.chart?.resize();
+    this.chart?.chart?.resize();
   }
 
   public btnText = signal('Hide wickets');
@@ -81,6 +81,7 @@ export class WktsMatchComponent {
   }
 
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+    devicePixelRatio: 4,
     responsive: true,
     scales: {
       y: {
@@ -88,21 +89,31 @@ export class WktsMatchComponent {
       }
     },
     plugins: {
-      title: {
-        display: true,
-        text: 'Wickets per Test match'
+      legend: {
+        position: 'bottom'
       },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson',
-        // color: 'blue',
-        // font: {
-        //   size: 12,
-        //   family: 'tahoma',
-        //   weight: 'normal',
-        //   style: 'italic'
-        // }
-      }
+      // title: {
+      //   display: true,
+      //   text: 'Wickets per Test match',
+      //   font: {
+      //     size: 24,
+      //     family: "Roboto",
+      //     // style: 'normal',
+      //     // weight: 'normal'
+      //   }
+      // },
+      // subtitle: {
+      //   display: true,
+      //   text: 'JM Anderson',
+      //   // color: 'blue',
+      //    font: {
+      //     family: "Roboto",
+      //   //   size: 12,
+      //   //   family: 'tahoma',
+      //   //   weight: 'normal',
+      //   //   style: 'italic'
+      //    }
+      // }
     }
   };
 }

@@ -1,5 +1,5 @@
 @if (loaded()) {
-<h3 class="centre">Matches & wickets taken by opponent</h3>
+<h4 class="centre">Matches & wickets taken by opposition</h4>
 
 <div class="graph">
     <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="wicketsData.datasets" [labels]="wicketsData.labels"
@@ -8,11 +8,11 @@
 </div>
 
 <section>
-    <div class="alert alert-info icon-text">
+    <p class="alert alert-info icon-text">
         <button mat-flat-button (click)="toggle5w()">{{btnText()}}</button>
         <mat-icon class="info-icon" aria-hidden="false" aria-label="information icon"
             fontIcon="info_outline"></mat-icon>
         Show or hide the five-wicket haul counts.
-    </div>
+    </p>
 </section>
 }

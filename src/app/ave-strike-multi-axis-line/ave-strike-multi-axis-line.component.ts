@@ -70,15 +70,19 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
   }
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+    devicePixelRatio: 4,
     responsive: true,
     plugins: {
-      title: {
-        display: true,
-        text: 'Cumulative bowling avaerage & strike rate'
-      },
-      subtitle: {
-        display: true,
-        text: 'JM Anderson',
+      // title: {
+      //   display: true,
+      //   text: 'Cumulative bowling avaerage & strike rate'
+      // },
+      // subtitle: {
+      //   display: true,
+      //   text: 'JM Anderson',
+      // },
+      legend: {
+        position: 'bottom'
       },
       datalabels: {
         borderRadius: 4,
