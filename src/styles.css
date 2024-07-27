@@ -24,6 +24,10 @@ body {
     text-decoration: underline;
 }
 
+.footnote {
+    font-size: smaller;
+}
+
 .alert {
     flex-wrap: wrap;
     padding: 2%;
@@ -61,7 +65,7 @@ body {
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 666px) {
     .container {
-        padding-top: 15%;
+        padding-top: 10%;
         margin: 2% 1% 5%;
         /* top / right/left / bottom */
     }
@@ -82,7 +86,7 @@ body {
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 667px) {
     .container {
-        padding-top: 9%;
+        padding-top: 8%;
         margin: 2% 10% 5%;
         /* top / right/left / bottom */
     }
@@ -99,7 +103,7 @@ body {
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 769px) {
     .container {
-        padding-top: 8%;
+        padding-top: 5%;
         margin: 2% 10% 5%;
         /* top / right/left / bottom */
     }
