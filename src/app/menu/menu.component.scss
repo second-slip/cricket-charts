@@ -26,11 +26,11 @@
     }
 
     .nav-menu {
-        padding: 0% 10%;
+        padding: 0% 4%;
     }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 992px) {
     .smaller-screen-collapse-menu {
         display: none;
     }
