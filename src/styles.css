@@ -74,14 +74,14 @@ body {
         text-align: center;
         font-weight: bold;
         position: sticky;
-        top: 0px;
+        top: 55px;
         padding: 10px 0px;
     }
 
     .info-icon {
         visibility: hidden;
     }
-    
+
 }
 
 /* Larger devices (769px and up) */

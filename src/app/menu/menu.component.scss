@@ -20,7 +20,7 @@
     background-color: beige
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 667px) {
     .larger-screen-menu {
         display: none;
     }
@@ -30,7 +30,17 @@
     }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 668px) {
+    .smaller-screen-collapse-menu {
+        display: none;
+    }
+
+    .nav-menu {
+        padding: 0% 10%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
     .smaller-screen-collapse-menu {
         display: none;
     }
