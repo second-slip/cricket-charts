@@ -1,5 +1,5 @@
 import { Component, HostListener, signal, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartData } from 'chart.js';
+import { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
 import { DataFetchService } from '../data-fetch.service';
