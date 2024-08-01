@@ -58,6 +58,11 @@ body {
     margin-right: 0.5%;
 }
 
+.chart {
+    min-width: 500px;
+    overflow: visible;
+}
+
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 666px) {
     .chart {
