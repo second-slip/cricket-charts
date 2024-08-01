@@ -1,6 +1,12 @@
 @if (loaded()) {
-<div class="chart">
-  <h4 class="centre">Wickets per Test match</h4>
+<h4 class="centre">Wickets per Test match</h4>
+<div class="chart full-scree" id="gh">
+  <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
+  <button mat-flat-button id="fs-doc-button" (click)="toggleFullscreen()">Toggle fullscreen</button>
+  <!-- <button mat-fab aria-label="Example icon button with a delete icon">
+    <mat-icon>delete</mat-icon>
+  </button> -->
+
   <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
     [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
   </canvas>
@@ -11,6 +17,6 @@
     <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
     Hide the wicket count bars.<sup>[1]</sup>
   </p>
-    <p class="footnote"><sup>1</sup> This will show the trend more clearly (on a smaller y-axis scale).</p>
+  <p class="footnote"><sup>1</sup> This will show the trend more clearly (on a smaller y-axis scale).</p>
 </section>
 }

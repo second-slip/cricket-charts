@@ -80,6 +80,22 @@ export class WktsMatchComponent {
     }
   }
 
+  public toggleFullscreen(): void {
+    var chartEle = document.getElementById("gh");
+
+    if (document.fullscreenElement || document.fullscreenElement) {
+      document?.exitFullscreen();
+      console.log('exit fullscreen')
+    }
+    else {
+      // @ts-ignore
+      screen.orientation.lock("landscape");
+      chartEle?.requestFullscreen();
+      console.log('enter fullscreen')
+    }
+  }
+
+
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     devicePixelRatio: 4,
     responsive: true,
@@ -92,16 +108,16 @@ export class WktsMatchComponent {
       legend: {
         position: 'bottom'
       },
-      // title: {
-      //   display: true,
-      //   text: 'Wickets per Test match',
-      //   font: {
-      //     size: 24,
-      //     family: "Roboto",
-      //     // style: 'normal',
-      //     // weight: 'normal'
-      //   }
-      // },
+      title: {
+        display: true,
+        text: 'Wickets per Test match',
+        font: {
+          size: 24,
+          family: "Roboto",
+          // style: 'normal',
+          // weight: 'normal'
+        }
+      },
       // subtitle: {
       //   display: true,
       //   text: 'JM Anderson',
@@ -117,3 +133,5 @@ export class WktsMatchComponent {
     }
   };
 }
+
+

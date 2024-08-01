@@ -1,3 +1,15 @@
 canvas {
     box-sizing: initial;
 }
+
+
+.chart.full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: lime;
+    z-index: 25;
+}
