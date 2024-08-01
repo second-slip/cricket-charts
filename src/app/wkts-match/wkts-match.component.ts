@@ -15,11 +15,11 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class WktsMatchComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
-  public width: any;
+
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(event: any) {
     //  console.log(event)
-    this.width = event;
+    // this.width = event;
     this.chart?.chart?.resize();
   }
 
