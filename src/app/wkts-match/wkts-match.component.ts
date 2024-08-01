@@ -17,8 +17,8 @@ export class WktsMatchComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
   @HostListener('window:resize', ['$event.target.innerHeight'])
-  onResize() { //event: any) {
-    // console.log(event)
+  onResize(event: any) {
+     console.log(event)
     this.chart?.chart?.resize();
   }
 
