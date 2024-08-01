@@ -1,18 +1,15 @@
 @if (loaded()) {
 <h4 class="centre">Strike rate</h4>
-
-
-  <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingStrikeData.datasets"
-    [labels]="bowlingStrikeData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
-  </canvas>
-
-
+<canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingStrikeData.datasets"
+  [labels]="bowlingStrikeData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
+</canvas>
 <section>
   <p class="alert alert-info">
     <button mat-flat-button (click)="focusAxis()">{{btnText()}}</button>
     Focus the scale to a new minimum of 53.<sup>[1]</sup>
   </p>
-  <p class="footnote"><sup>1</sup> This hides the first 13 'outlier' innings to show the trend in the remaining 343 innings more
+  <p class="footnote"><sup>1</sup> This hides the first 13 'outlier' innings to show the trend in the remaining 343
+    innings more
     clearly.</p>
 </section>
 }

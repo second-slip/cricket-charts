@@ -16,9 +16,9 @@ export class CumulativeAveLineComponent {
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-     this.chart?.chart?.resize();
+    this.chart?.chart?.resize();
   }
-  
+
   public loaded = signal(false);
 
   public bowlingAverageData: ChartData<'line'> = {
@@ -57,7 +57,8 @@ export class CumulativeAveLineComponent {
   }
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
-    responsive: true, maintainAspectRatio: false,
+    responsive: true,
+    maintainAspectRatio: false,
     devicePixelRatio: 4,
     plugins: {
       legend: {

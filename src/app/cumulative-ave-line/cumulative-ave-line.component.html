@@ -1,8 +1,6 @@
 @if (loaded()) {
 <h4 class="centre">Bowling average</h4>
-<div class="graph">
-    <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingAverageData.datasets"
-        [labels]="bowlingAverageData.labels" [options]="lineChartOptions">
-    </canvas>
-</div>
+<canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingAverageData.datasets"
+    [labels]="bowlingAverageData.labels" [options]="lineChartOptions">
+</canvas>
 }
