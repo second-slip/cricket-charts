@@ -89,7 +89,7 @@ export class WktsMatchComponent {
     }
     else {
       // @ts-ignore
-      screen.orientation.lock("landscape");
+      screen.orientation.lock("landscape-primary");
       chartEle?.requestFullscreen();
       console.log('enter fullscreen')
     }
