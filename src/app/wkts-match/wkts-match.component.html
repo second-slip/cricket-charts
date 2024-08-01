@@ -10,7 +10,14 @@
 <canvas class="chart" baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
   [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
 </canvas>
-<!-- </div> -->
+
+<!-- use a different container -->
+<!-- <div class="chart-full-screen full-screen">
+  <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
+  <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
+    [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
+  </canvas>
+</div> -->
 
 <section>
   <p class="alert alert-info">
