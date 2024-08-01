@@ -1,11 +1,11 @@
 @if (loaded()) {
 <h4 class="centre">Strike rate</h4>
 
-<div class="chart">
-  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingStrikeData.datasets"
+
+  <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingStrikeData.datasets"
     [labels]="bowlingStrikeData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
   </canvas>
-</div>
+
 
 <section>
   <p class="alert alert-info">

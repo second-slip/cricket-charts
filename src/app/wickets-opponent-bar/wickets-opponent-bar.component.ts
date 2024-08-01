@@ -81,6 +81,7 @@ export class WicketsOpponentBarComponent {
 
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
+    maintainAspectRatio: false,
     devicePixelRatio: 4,
     indexAxis: 'y',
     plugins: {

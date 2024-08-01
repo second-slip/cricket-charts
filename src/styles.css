@@ -8,10 +8,6 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.chart {
-    width: 100%;
-}
-
 .centre {
     text-align: center;
 }
@@ -64,6 +60,11 @@ body {
 
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 666px) {
+    .chart {
+        max-height: 350px;
+        width: 100%;
+    }
+
     .container {
         padding-top: 10%;
         margin: 2% 1% 5%;
@@ -86,6 +87,11 @@ body {
 
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 667px) {
+    .chart {
+        max-height: 350px;
+        width: 100%;
+    }
+
     .container {
         padding-top: 8%;
         margin: 2% 4% 5%;
@@ -103,6 +109,11 @@ body {
 
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 769px) {
+    .chart {
+        max-height: 350px;
+        width: 100%;
+    }
+
     .container {
         padding-top: 5%;
         margin: 2% 4% 5%;
@@ -120,6 +131,11 @@ body {
 
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 992px) {
+    .chart {
+        max-height: 500px;
+        width: 100%;
+    }
+
     .container {
         padding-top: 6%;
         margin: 2% 15% 5%;

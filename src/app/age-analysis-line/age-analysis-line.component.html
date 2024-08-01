@@ -1,9 +1,9 @@
 @if (loaded()) {
   <h4 class="centre">Bowling average with age analysis</h4>
 
-<div class="chart">
-  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="ageAnalysisData.datasets"
+
+  <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="ageAnalysisData.datasets"
     [labels]="ageAnalysisData.labels" [options]="lineChartOptions">
   </canvas>
-</div>
+
 }

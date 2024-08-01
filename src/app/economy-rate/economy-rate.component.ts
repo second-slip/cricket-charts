@@ -53,6 +53,7 @@ export class EconomyRateComponent {
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
+    maintainAspectRatio: false,
     devicePixelRatio: 4,
     plugins: {
       legend: {

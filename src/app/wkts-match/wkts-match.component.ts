@@ -16,8 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
 export class WktsMatchComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  @HostListener('window:resize', ['$event.target.innerHeight'])
+  onResize() { //event: any) {
+    // console.log(event)
     this.chart?.chart?.resize();
   }
 
@@ -99,6 +100,7 @@ export class WktsMatchComponent {
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     devicePixelRatio: 4,
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         stacked: false

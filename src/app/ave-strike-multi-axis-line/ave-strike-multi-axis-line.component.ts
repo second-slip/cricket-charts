@@ -71,7 +71,8 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
     devicePixelRatio: 4,
-    responsive: true,
+    responsive: true, 
+    maintainAspectRatio: false,
     plugins: {
       // title: {
       //   display: true,

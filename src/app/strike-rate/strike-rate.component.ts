@@ -72,7 +72,7 @@ export class StrikeRateComponent implements OnInit {
           min: this.axis()
         }
       },
-      responsive: true,
+      responsive: true, maintainAspectRatio: false,
       devicePixelRatio: 4,
       plugins: {
         legend: {
@@ -109,6 +109,7 @@ export class StrikeRateComponent implements OnInit {
     //   alert('k')
     //   this.chart?.chart?.resize();//.update();
     // },
+    maintainAspectRatio: false,
     devicePixelRatio: 4,
     responsive: true,
     plugins: {

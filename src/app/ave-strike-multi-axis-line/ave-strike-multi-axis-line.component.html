@@ -3,9 +3,9 @@
 
 <p class="centre">Multiple y-axes chart</p>
 
-<div class="chart">
-    <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingAverageStrikeData.datasets"
-        [labels]="bowlingAverageStrikeData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
-    </canvas>
-</div>
+
+<canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingAverageStrikeData.datasets"
+    [labels]="bowlingAverageStrikeData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
+</canvas>
+
 }

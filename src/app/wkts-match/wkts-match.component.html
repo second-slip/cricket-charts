@@ -1,16 +1,16 @@
 @if (loaded()) {
-<h4 class="centre">Wickets per Test match</h4>
-<div class="chart full-scree" id="gh">
-  <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
-  <button mat-flat-button id="fs-doc-button" (click)="toggleFullscreen()">Toggle fullscreen</button>
-  <!-- <button mat-fab aria-label="Example icon button with a delete icon">
+<!-- <h4 class="centre">Wickets per Test match</h4> -->
+<!-- <div id="gh"> -->
+<!-- <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
+  <button mat-flat-button id="fs-doc-button" (click)="toggleFullscreen()">Toggle fullscreen</button> -->
+<!-- <button mat-fab aria-label="Example icon button with a delete icon">
     <mat-icon>delete</mat-icon>
   </button> -->
 
-  <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
-    [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
-  </canvas>
-</div>
+<canvas class="chart" baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
+  [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
+</canvas>
+<!-- </div> -->
 
 <section>
   <p class="alert alert-info">

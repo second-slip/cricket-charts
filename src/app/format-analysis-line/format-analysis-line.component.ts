@@ -73,7 +73,7 @@ export class FormatAnalysisLineComponent {
 
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
-    responsive: true,
+    responsive: true, maintainAspectRatio: false,
     devicePixelRatio: 4,
     plugins: {
       legend: {
