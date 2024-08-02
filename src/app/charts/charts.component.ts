@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { AgeAnalysisLineComponent } from '../age-analysis-line/age-analysis-line.component';
 import { AveStrikeMultiAxisLineComponent } from '../ave-strike-multi-axis-line/ave-strike-multi-axis-line.component';
-import { CumulativeAveLineComponent } from '../cumulative-ave-line/cumulative-ave-line.component';
 import { EconomyRateComponent } from '../economy-rate/economy-rate.component';
-import { FormatAnalysisLineComponent } from '../format-analysis-line/format-analysis-line.component';
 import { StrikeRateComponent } from '../strike-rate/strike-rate.component';
 import { WicketsOpponentBarComponent } from '../wickets-opponent-bar/wickets-opponent-bar.component';
 import { WktsMatchComponent } from '../wkts-match/wkts-match.component';
+import { BowlingAveTabsComponent } from '../bowling-ave-tabs/bowling-ave-tabs.component';
 
 @Component({
   selector: 'app-charts',
@@ -15,16 +13,12 @@ import { WktsMatchComponent } from '../wkts-match/wkts-match.component';
     EconomyRateComponent,
     StrikeRateComponent,
     WktsMatchComponent,
-    AgeAnalysisLineComponent,
-    FormatAnalysisLineComponent,
+    BowlingAveTabsComponent,
     AveStrikeMultiAxisLineComponent,
     AveStrikeMultiAxisLineComponent,
-    WicketsOpponentBarComponent,
-    CumulativeAveLineComponent,
+    WicketsOpponentBarComponent
   ],
   templateUrl: './charts.component.html',
   styleUrl: './charts.component.css'
 })
-export class ChartsComponent {
-
-}
+export class ChartsComponent { }
