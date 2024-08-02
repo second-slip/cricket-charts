@@ -34,7 +34,8 @@ export class StrikeRateComponent implements OnInit {
     datasets: [
       {
         data: [],
-        label: 'cumulative strike rate'
+        label: 'cumulative strike rate',
+        yAxisID: 'y'
       }
     ]
   };
@@ -68,9 +69,30 @@ export class StrikeRateComponent implements OnInit {
       this.btnText.set('Reset axis');
     }
     this.lineChartOptions = {
+      // scales: {
+      //   y: {
+      //     min: this.axis()
+      //   }
+      // },
       scales: {
         y: {
-          min: this.axis()
+          min: this.axis(),
+          type: 'linear',
+          display: true,
+          position: 'left',
+        },
+        y1: {
+          min: this.axis(),
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: {
+            display: false
+          },
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
         }
       },
       responsive: true, maintainAspectRatio: false,
@@ -110,6 +132,25 @@ export class StrikeRateComponent implements OnInit {
     //   alert('k')
     //   this.chart?.chart?.resize();//.update();
     // },
+    scales: {
+      y: {
+        type: 'linear',
+        display: true,
+        position: 'left',
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        ticks: {
+          display: false
+        },
+        // grid line settings
+        grid: {
+          drawOnChartArea: false, // only want the grid lines for one axis to show up
+        },
+      },
+    },
     maintainAspectRatio: false,
     devicePixelRatio: 4,
     responsive: true,

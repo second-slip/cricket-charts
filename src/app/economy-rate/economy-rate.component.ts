@@ -18,7 +18,7 @@ export class EconomyRateComponent {
   onResize() {
     this.chart?.chart?.resize();
   }
-  
+
   public loaded = signal(false);
 
   public bowlingEconomyData: ChartData<'line'> = {
@@ -58,6 +58,25 @@ export class EconomyRateComponent {
     plugins: {
       legend: {
         position: 'bottom'
+      }
+    },
+    scales: {
+      y: {
+        type: 'linear',
+        display: true,
+        position: 'left',
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        ticks: {
+          display: false
+        },
+        // grid line settings
+        grid: {
+          drawOnChartArea: false, // only want the grid lines for one axis to show up
+        },
       }
     }
   };
