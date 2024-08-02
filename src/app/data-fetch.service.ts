@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IChartData } from './i-chart-data.dto';
-import { cumulativeAverageData, cumulativeStrikeRateData, cumulativeEconomyData, wicketsByTeamData, ageAnalysisData, formatAnalysisData, wicketsPerMatch } from '../assets/chartData';
+import { cumulativeAverageData, cumulativeStrikeRateData, cumulativeEconomyData, ageAnalysisData, formatAnalysisData, wicketsPerMatch } from '../assets/chartData';
+import { wicketsByTeamData } from '../../dist/cricket-charts/browser/assets/chartData';
 
 @Injectable({
   providedIn: 'root'

@@ -3,6 +3,7 @@ import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
 import { DataFetchService } from '../data-fetch.service';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-economy-rate',
@@ -19,6 +20,7 @@ export class EconomyRateComponent {
     this.chart?.chart?.resize();
   }
 
+  public chartPlugins = [ChartDataLabels];
   public loaded = signal(false);
 
   public bowlingEconomyData: ChartData<'line'> = {
@@ -44,6 +46,9 @@ export class EconomyRateComponent {
         next: (data: IChartData) => {
           this.bowlingEconomyData.labels = data.chartLabels,
             this.bowlingEconomyData.datasets[0].data = data.chartData[0]
+
+          console.log(this.bowlingEconomyData.labels.length)
+          console.log(this.bowlingEconomyData.datasets[0].data.length)
         },
         error: (e) => { console.log(e); }
       });
@@ -58,6 +63,18 @@ export class EconomyRateComponent {
     plugins: {
       legend: {
         position: 'bottom'
+      },
+      datalabels: {
+        borderRadius: 4,
+        color: 'black',
+        font: {
+          weight: 'bold'
+        },
+        padding: 6,
+        offset: 0,
+        align: 'top',
+        anchor: 'end',
+        formatter: (val, ctx) => ctx.dataIndex === this.bowlingEconomyData.datasets[0].data.length - 1 ? val : ''
       }
     },
     scales: {

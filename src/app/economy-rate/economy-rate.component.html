@@ -1,6 +1,7 @@
 @if (loaded()) {
 <h4 class="centre">Economy rate</h4>
+<p class="centre">James Anderson's economy rate is 2.79. This is how it changed over his career.</p>
 <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingEconomyData.datasets"
-  [labels]="bowlingEconomyData.labels" [options]="lineChartOptions">
+  [labels]="bowlingEconomyData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
 </canvas>
 }
