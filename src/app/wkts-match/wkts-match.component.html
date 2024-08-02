@@ -1,11 +1,5 @@
 @if (loaded()) {
-<!-- <h4 class="centre">Wickets per Test match</h4> -->
-<!-- <div id="gh"> -->
-<!-- <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
-  <button mat-flat-button id="fs-doc-button" (click)="toggleFullscreen()">Toggle fullscreen</button> -->
-<!-- <button mat-fab aria-label="Example icon button with a delete icon">
-    <mat-icon>delete</mat-icon>
-  </button> -->
+<h4 class="centre">Wickets per Test match</h4>
 
 <canvas class="chart" baseChart [type]="'bar'" [legend]="true" [datasets]="formatAnalysisData.chartData"
   [labels]="formatAnalysisData.chartLabels" [options]="barChartOptions">
@@ -19,11 +13,13 @@
   </canvas>
 </div> -->
 
-<section>
-  <p class="alert alert-info">
-    <button mat-flat-button (click)="toggleBar()">{{btnText()}}</button>
-    Hide the wicket count bars.<sup>[1]</sup>
-  </p>
-  <p class="footnote"><sup>1</sup> This will show the trend more clearly (on a smaller y-axis scale).</p>
+<section class="chart-buttons centre">
+
+  <button mat-stroked-button
+    matTooltip="Hide the wicket count bars to show the trend more clearly on a smaller y-axis scale."
+    [matTooltipHideDelay]="hideDelay" (click)="toggleBar()">{{btnText()}}</button>
+
+  <!-- <p class="footnote"><sup>1</sup> Hiding the the wicket count bars will show the trend more clearly (on a smaller
+    y-axis scale).</p> -->
 </section>
 }

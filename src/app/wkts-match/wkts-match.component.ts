@@ -5,11 +5,12 @@ import { IChartData } from '../i-chart-data.dto';
 import { DataFetchService } from '../data-fetch.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-wkts-match',
   standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule],
+  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './wkts-match.component.html',
   styleUrl: './wkts-match.component.css'
 })
@@ -24,6 +25,7 @@ export class WktsMatchComponent {
   }
 
   public btnText = signal('Hide wickets');
+  hideDelay = 2000;
   public loaded = signal(false);
 
   public formatAnalysisData: IChartData = {  // ChartData<'bar'>
@@ -109,18 +111,18 @@ export class WktsMatchComponent {
     },
     plugins: {
       legend: {
-        position: 'bottom'
+        position: 'top'
       },
-      title: {
-        display: true,
-        text: 'Wickets per Test match',
-        font: {
-          size: 24,
-          family: "Roboto",
-          // style: 'normal',
-          // weight: 'normal'
-        }
-      },
+      // title: {
+      //   display: true,
+      //   text: 'Wickets per Test match',
+      //   font: {
+      //     size: 24,
+      //     family: "Roboto",
+      //     // style: 'normal',
+      //     // weight: 'normal'
+      //   }
+      // },
       // subtitle: {
       //   display: true,
       //   text: 'JM Anderson',

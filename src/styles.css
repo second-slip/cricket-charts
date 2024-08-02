@@ -63,6 +63,10 @@ body {
     overflow: visible;
 }
 
+.chart-buttons {
+    margin: 1%;
+}
+
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 666px) {
     .chart {
