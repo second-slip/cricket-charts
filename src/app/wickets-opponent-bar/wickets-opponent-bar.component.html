@@ -5,12 +5,8 @@
     [labels]="wicketsData.labels" [options]="barChartOptions" [plugins]="chartPlugins">
 </canvas>
 
-<section>
-    <p class="alert alert-info icon-text">
-        <button mat-flat-button (click)="toggle5w()">{{btnText()}}</button>
-        <mat-icon class="info-icon" aria-hidden="false" aria-label="information icon"
-            fontIcon="info_outline"></mat-icon>
-        Show or hide the five-wicket haul counts.
-    </p>
+<section class="chart-buttons centre">
+    <button mat-stroked-button matTooltip="Show or hide the five-wicket haul counts." [matTooltipHideDelay]="2000"
+        (click)="toggle5w()">{{btnText()}}</button>
 </section>
 }

@@ -6,11 +6,12 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFetchService } from '../data-fetch.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-wickets-opponent-bar',
   standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule],
+  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './wickets-opponent-bar.component.html',
   styleUrl: './wickets-opponent-bar.component.css'
 })

@@ -6,11 +6,12 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFetchService } from '../data-fetch.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-strike-rate',
   standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule],
+  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './strike-rate.component.html',
   styleUrl: './strike-rate.component.css'
 })
