@@ -60,7 +60,8 @@ body {
 
 .chart {
     min-width: 450px;
-    overflow: visible;
+    /* overflow: visible; */
+    overflow-y: visible;
 }
 
 .chart-buttons {

@@ -10,7 +10,7 @@ import { map } from 'rxjs';
   standalone: true,
   imports: [BaseChartDirective],
   templateUrl: './age-analysis-line.component.html',
-  styleUrl: './age-analysis-line.component.css'
+  styleUrl: './age-analysis-line.component.scss'
 })
 export class AgeAnalysisLineComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;

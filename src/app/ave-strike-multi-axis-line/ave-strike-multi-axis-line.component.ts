@@ -10,7 +10,7 @@ import { BaseChartDirective } from 'ng2-charts';
   standalone: true,
   imports: [BaseChartDirective],
   templateUrl: './ave-strike-multi-axis-line.component.html',
-  styleUrl: './ave-strike-multi-axis-line.component.css'
+  styleUrl: './ave-strike-multi-axis-line.component.scss'
 })
 export class AveStrikeMultiAxisLineComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;

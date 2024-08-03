@@ -9,7 +9,7 @@ import { DataFetchService } from '../data-fetch.service';
   standalone: true,
   imports: [BaseChartDirective],
   templateUrl: './format-analysis-line.component.html',
-  styleUrl: './format-analysis-line.component.css'
+  styleUrl: './format-analysis-line.component.scss'
 })
 export class FormatAnalysisLineComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;

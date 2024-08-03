@@ -4,13 +4,15 @@ import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
 import { DataFetchService } from '../data-fetch.service';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-economy-rate',
   standalone: true,
-  imports: [BaseChartDirective],
+  imports: [BaseChartDirective, MatButtonModule, MatTooltipModule],
   templateUrl: './economy-rate.component.html',
-  styleUrl: './economy-rate.component.css'
+  styleUrl: './economy-rate.component.scss'
 })
 export class EconomyRateComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
@@ -28,7 +30,8 @@ export class EconomyRateComponent {
     datasets: [
       {
         data: [],
-        label: 'cumulative economy rate'
+        label: 'cumulative economy rate',
+        yAxisID: 'y'
       }
     ]
   };
@@ -39,6 +42,62 @@ export class EconomyRateComponent {
     this._getData();
   }
 
+  public btnText = signal('Focus axis');
+  private axis = signal(4.6);
+
+  public focusAxis(): void {
+    if (this.axis() === 4) {
+      this.axis.set(4.6);
+      this.btnText.set('Focus axis');
+    } else {
+      this.axis.set(4);
+      this.btnText.set('Reset axis');
+    }
+
+    this.lineChartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      devicePixelRatio: 4,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        },
+        datalabels: {
+          borderRadius: 4,
+          color: 'black',
+          font: {
+            weight: 'bold'
+          },
+          padding: 6,
+          offset: 0,
+          align: 'top',
+          anchor: 'end',
+          formatter: (val, ctx) => ctx.dataIndex === this.bowlingEconomyData.datasets[0].data.length - 1 ? val : ''
+        }
+      },
+      scales: {
+        y: {
+          max: this.axis(),
+          type: 'linear',
+          display: true,
+          position: 'left',
+        },
+        y1: {
+          max: this.axis(),
+          type: 'linear',
+          display: false,
+          position: 'right',
+          ticks: {
+            display: true
+          },
+          grid: { // grid line settings
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        }
+      }
+    };
+  }
+
   private _getData(): void {
     this._service.getCumulativeEconomySeries()
       .pipe()
@@ -46,9 +105,6 @@ export class EconomyRateComponent {
         next: (data: IChartData) => {
           this.bowlingEconomyData.labels = data.chartLabels,
             this.bowlingEconomyData.datasets[0].data = data.chartData[0]
-
-          console.log(this.bowlingEconomyData.labels.length)
-          console.log(this.bowlingEconomyData.datasets[0].data.length)
         },
         error: (e) => { console.log(e); }
       });
@@ -85,13 +141,12 @@ export class EconomyRateComponent {
       },
       y1: {
         type: 'linear',
-        display: true,
+        display: false,
         position: 'right',
         ticks: {
-          display: false
+          display: true,
         },
-        // grid line settings
-        grid: {
+        grid: { // grid line settings
           drawOnChartArea: false, // only want the grid lines for one axis to show up
         },
       }

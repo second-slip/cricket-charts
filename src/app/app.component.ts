@@ -14,7 +14,7 @@ import { MenuComponent } from './menu/menu.component';
     MenuComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'cricket-charts';

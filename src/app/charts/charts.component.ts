@@ -19,6 +19,6 @@ import { BowlingAveTabsComponent } from '../bowling-ave-tabs/bowling-ave-tabs.co
     WicketsOpponentBarComponent
   ],
   templateUrl: './charts.component.html',
-  styleUrl: './charts.component.css'
+  styleUrl: './charts.component.scss'
 })
 export class ChartsComponent { }

@@ -1,19 +1,21 @@
 <h4 class="centre">Bowling average</h4>
 
-<mat-tab-group>
-    <mat-tab label="Average">
-        <ng-template matTabContent>
-            <app-cumulative-ave-line></app-cumulative-ave-line>
-        </ng-template>
-    </mat-tab>
-    <mat-tab label="Career focus">
-        <ng-template matTabContent>
-            <app-format-analysis-line></app-format-analysis-line>
-        </ng-template>
-    </mat-tab>
-    <mat-tab label="Age analysis">
-        <ng-template matTabContent>
-            <app-age-analysis-line></app-age-analysis-line>
-        </ng-template>
-    </mat-tab>
-</mat-tab-group>
+<div>
+    <mat-tab-group>
+        <mat-tab label="Average">
+            <ng-template matTabContent>
+                <app-cumulative-ave-line></app-cumulative-ave-line>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Career focus">
+            <ng-template matTabContent>
+                <app-format-analysis-line></app-format-analysis-line>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Age analysis">
+            <ng-template matTabContent>
+                <app-age-analysis-line></app-age-analysis-line>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>

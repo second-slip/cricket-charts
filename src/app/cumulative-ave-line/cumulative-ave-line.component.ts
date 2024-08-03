@@ -9,7 +9,7 @@ import { DataFetchService } from '../data-fetch.service';
   standalone: true,
   imports: [BaseChartDirective],
   templateUrl: './cumulative-ave-line.component.html',
-  styleUrl: './cumulative-ave-line.component.css'
+  styleUrl: './cumulative-ave-line.component.scss'
 })
 export class CumulativeAveLineComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;

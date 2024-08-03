@@ -13,7 +13,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   standalone: true,
   imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './strike-rate.component.html',
-  styleUrl: './strike-rate.component.css'
+  styleUrl: './strike-rate.component.scss'
 })
 export class StrikeRateComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;

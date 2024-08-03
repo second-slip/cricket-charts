@@ -12,7 +12,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   standalone: true,
   imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './wkts-match.component.html',
-  styleUrl: './wkts-match.component.css'
+  styleUrl: './wkts-match.component.scss'
 })
 export class WktsMatchComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;

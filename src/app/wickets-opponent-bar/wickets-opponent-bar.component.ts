@@ -13,7 +13,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   standalone: true,
   imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './wickets-opponent-bar.component.html',
-  styleUrl: './wickets-opponent-bar.component.css'
+  styleUrl: './wickets-opponent-bar.component.scss'
 })
 export class WicketsOpponentBarComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;

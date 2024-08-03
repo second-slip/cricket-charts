@@ -1,7 +1,14 @@
 @if (loaded()) {
 <h4 class="centre">Economy rate</h4>
-<p class="centre">James Anderson's economy rate is 2.79. This is how it changed over his career.</p>
+<p class="centre">James Anderson's economy rate is 2.79. This chart shows how it changed over his career.</p>
+
 <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="bowlingEconomyData.datasets"
   [labels]="bowlingEconomyData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
 </canvas>
+
+<section class="chart-buttons centre">
+  <button mat-stroked-button
+    matTooltip="Focus the scale to a new maximum of 4.  This hides the first three 'outlier' innings, the only ones above 4."
+    [matTooltipHideDelay]="2000" (click)="focusAxis()">{{btnText()}}</button>
+</section>
 }

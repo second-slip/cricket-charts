@@ -9,6 +9,6 @@ import { AgeAnalysisLineComponent } from "../age-analysis-line/age-analysis-line
   standalone: true,
   imports: [MatTabsModule, CumulativeAveLineComponent, FormatAnalysisLineComponent, AgeAnalysisLineComponent],
   templateUrl: './bowling-ave-tabs.component.html',
-  styleUrl: './bowling-ave-tabs.component.css'
+  styleUrl: './bowling-ave-tabs.component.scss'
 })
 export class BowlingAveTabsComponent { }
