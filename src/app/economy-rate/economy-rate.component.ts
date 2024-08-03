@@ -68,8 +68,8 @@ export class EconomyRateComponent {
           font: {
             weight: 'bold'
           },
-          padding: 6,
-          offset: 0,
+          padding: {},
+          offset: 1,
           align: 'top',
           anchor: 'end',
           formatter: (val, ctx) => ctx.dataIndex === this.bowlingEconomyData.datasets[0].data.length - 1 ? val : ''
@@ -77,6 +77,10 @@ export class EconomyRateComponent {
       },
       scales: {
         y: {
+          title: {
+            display: true,
+            text: 'runs per over'
+          },
           max: this.axis(),
           type: 'linear',
           display: true,
@@ -85,10 +89,10 @@ export class EconomyRateComponent {
         y1: {
           max: this.axis(),
           type: 'linear',
-          display: false,
+          display: true,
           position: 'right',
           ticks: {
-            display: true
+            display: false
           },
           grid: { // grid line settings
             drawOnChartArea: false, // only want the grid lines for one axis to show up
@@ -126,8 +130,8 @@ export class EconomyRateComponent {
         font: {
           weight: 'bold'
         },
-        padding: 6,
-        offset: 0,
+        padding: {},
+        offset: 1,
         align: 'top',
         anchor: 'end',
         formatter: (val, ctx) => ctx.dataIndex === this.bowlingEconomyData.datasets[0].data.length - 1 ? val : ''
@@ -135,16 +139,20 @@ export class EconomyRateComponent {
     },
     scales: {
       y: {
+        title: {
+          display: true,
+          text: 'runs per over'
+        },
         type: 'linear',
         display: true,
         position: 'left',
       },
       y1: {
         type: 'linear',
-        display: false,
+        display: true,
         position: 'right',
         ticks: {
-          display: true,
+          display: false,
         },
         grid: { // grid line settings
           drawOnChartArea: false, // only want the grid lines for one axis to show up
