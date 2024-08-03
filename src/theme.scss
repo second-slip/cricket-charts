@@ -1,21 +1,17 @@
-@use '~@angular/material' as mat; 
+@use '@angular/material' as mat;
 
-@include core.core();
+@include mat.core();
 
-$theme: definition.define-theme((
-  color: (
+$my-theme: mat.define-theme((
+ color: (
     theme-type: light,
-    primary: palettes.$azure-palette,
-    tertiary: palettes.$blue-palette,
+    primary: mat.$violet-palette,
   ),
-  density: (
-    scale: 0,
-  )
 ));
 
 html {
-  @include all-theme.all-component-themes($theme);
+  @include mat.all-component-themes($my-theme);
 }
 
-@include color-api-backwards-compatibility.color-variants-backwards-compatibility($theme);
-@include typography.typography-hierarchy($theme);
+// @include color-api-backwards-compatibility.color-variants-backwards-compatibility($theme);
+// @include typography.typography-hierarchy($theme);
