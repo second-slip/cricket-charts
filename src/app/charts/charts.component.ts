@@ -5,6 +5,8 @@ import { StrikeRateComponent } from '../strike-rate/strike-rate.component';
 import { WicketsOpponentBarComponent } from '../wickets-opponent-bar/wickets-opponent-bar.component';
 import { WktsMatchComponent } from '../wkts-match/wkts-match.component';
 import { BowlingAveTabsComponent } from '../bowling-ave-tabs/bowling-ave-tabs.component';
+import { YearBarComponent } from '../year-bar/year-bar.component';
+import { InningsBarComponent } from '../innings-bar/innings-bar.component';
 
 @Component({
   selector: 'app-charts',
@@ -16,7 +18,9 @@ import { BowlingAveTabsComponent } from '../bowling-ave-tabs/bowling-ave-tabs.co
     BowlingAveTabsComponent,
     AveStrikeMultiAxisLineComponent,
     AveStrikeMultiAxisLineComponent,
-    WicketsOpponentBarComponent
+    WicketsOpponentBarComponent,
+    YearBarComponent,
+    InningsBarComponent
   ],
   templateUrl: './charts.component.html',
   styleUrl: './charts.component.scss'
