@@ -8,7 +8,8 @@ import {
   ageAnalysisData,
   formatAnalysisData,
   wicketsPerMatch,
-  wicketsByTeamData
+  wicketsByTeamData,
+  matchInningsAnalysisData
 } from '../assets/chartData';
 
 @Injectable({
@@ -32,6 +33,10 @@ export class DataFetchService {
 
   public getWicketsByTeamSeries(): Observable<IChartData> {
     return of(wicketsByTeamData);
+  }
+
+  public getMatchInningsAnalysis(): Observable<IChartData> {
+    return of(matchInningsAnalysisData);
   }
 
   public getAgeAnalysis(): Observable<IChartData> {
