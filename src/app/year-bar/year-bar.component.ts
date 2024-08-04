@@ -60,7 +60,7 @@ export class YearBarComponent {
       .subscribe({
         next: (data: IChartData) => {
           this.wicketsData.labels = data.chartLabels,
-            this.wicketsData.datasets[0].data = data.chartData[0],
+          this.wicketsData.datasets[0].data = data.chartData[0],
             this.wicketsData.datasets[1].data = data.chartData[1],
             this.wicketsData.datasets[2].data = data.chartData[2]
         },
