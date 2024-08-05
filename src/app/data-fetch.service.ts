@@ -10,8 +10,10 @@ import {
   wicketsPerMatch,
   wicketsByTeamData,
   matchInningsAnalysisData,
-  yearAnalysisData
+  yearAnalysisData,
+  homeAwayAverageData
 } from '../assets/chartData';
+import { IHomeAwayData } from './home_away/ave-home-away/i-hone-away-data.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,10 @@ import {
 export class DataFetchService {
 
   constructor() { }
+
+  public getAveHomeAway(): Observable<IHomeAwayData> {
+    return of(homeAwayAverageData);
+  }
 
   public getCumulativeAverageSeries(): Observable<IChartData> {
     return of(cumulativeAverageData);

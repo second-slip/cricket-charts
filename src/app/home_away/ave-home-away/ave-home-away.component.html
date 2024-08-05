@@ -1,0 +1,16 @@
+@if (loaded()) {
+<section class="tab-conent-top-padding">
+
+    <p class="centre">...</p>
+
+    <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="homeAwayAverageData.datasets"
+        [labels]="homeAwayAverageData.labels" [options]="lineChartOptions" [plugins]="chartPlugins">
+    </canvas>
+
+    <section class="chart-buttons centre">
+        <button mat-stroked-button
+            matTooltip="Focus the scale to a new maximum of 70.  This hides the first two 'outlier' innings played abroad (values: 101, 117), the only ones above 62."
+            [matTooltipHideDelay]="2000" (click)="focusAxis()">{{btnText()}}</button>
+    </section>
+</section>
+}

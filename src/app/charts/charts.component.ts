@@ -7,6 +7,8 @@ import { WktsMatchComponent } from '../wkts-match/wkts-match.component';
 import { BowlingAveTabsComponent } from '../bowling-ave-tabs/bowling-ave-tabs.component';
 import { YearBarComponent } from '../year-bar/year-bar.component';
 import { InningsBarComponent } from '../innings-bar/innings-bar.component';
+import { AveHomeAwayComponent } from '../home_away/ave-home-away/ave-home-away.component';
+import { HomeAwayTabsComponent } from "../home_away/home-away-tabs/home-away-tabs.component";
 
 @Component({
   selector: 'app-charts',
@@ -20,8 +22,10 @@ import { InningsBarComponent } from '../innings-bar/innings-bar.component';
     AveStrikeMultiAxisLineComponent,
     WicketsOpponentBarComponent,
     YearBarComponent,
-    InningsBarComponent
-  ],
+    InningsBarComponent,
+    AveHomeAwayComponent,
+    HomeAwayTabsComponent
+],
   templateUrl: './charts.component.html',
   styleUrl: './charts.component.scss'
 })
