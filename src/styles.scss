@@ -12,9 +12,9 @@ body {
     text-align: center;
 }
 
-.divider {
-    margin: 5% 0%;
-}
+// .divider {
+//     margin: 5% 0%;
+// }
 
 .underline {
     text-decoration: underline;
@@ -57,10 +57,7 @@ body {
     align-items: center;
 }
 
-.info-icon {
-    margin-left: 1%;
-    margin-right: 0.5%;
-}
+
 
 .chart {
     min-width: 425px;
@@ -94,14 +91,14 @@ body {
         text-align: center;
         font-weight: bold;
         position: sticky;
+        z-index: 9999;
         top: 55px;
         padding: 10px 0px;
     }
 
-    .info-icon {
-        visibility: hidden;
+    .divider {
+        margin: 10% 0%;
     }
-
 }
 
 /* Larger devices (769px and up) */
@@ -121,8 +118,8 @@ body {
         display: none;
     }
 
-    .info-icon {
-        visibility: visible;
+    .divider {
+        margin: 10% 0%;
     }
 }
 
@@ -143,8 +140,8 @@ body {
         display: none;
     }
 
-    .info-icon {
-        visibility: visible;
+    .divider {
+        margin: 5% 0%;
     }
 }
 
@@ -165,7 +162,7 @@ body {
         display: none;
     }
 
-    .info-icon {
-        visibility: visible;
+    .divider {
+        margin: 5% 0%;
     }
 }
