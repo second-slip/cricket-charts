@@ -9,6 +9,7 @@ import { YearBarComponent } from '../year-bar/year-bar.component';
 import { InningsBarComponent } from '../innings-bar/innings-bar.component';
 import { AveHomeAwayComponent } from '../home_away/ave-home-away/ave-home-away.component';
 import { HomeAwayTabsComponent } from "../home_away/home-away-tabs/home-away-tabs.component";
+import { HomeGroundsBarComponent } from "../grounds/home-grounds-bar/home-grounds-bar.component";
 
 @Component({
   selector: 'app-charts',
@@ -24,7 +25,8 @@ import { HomeAwayTabsComponent } from "../home_away/home-away-tabs/home-away-tab
     YearBarComponent,
     InningsBarComponent,
     AveHomeAwayComponent,
-    HomeAwayTabsComponent
+    HomeAwayTabsComponent,
+    HomeGroundsBarComponent
 ],
   templateUrl: './charts.component.html',
   styleUrl: './charts.component.scss'
