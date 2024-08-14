@@ -10,6 +10,7 @@ import { InningsBarComponent } from '../innings-bar/innings-bar.component';
 import { AveHomeAwayComponent } from '../home_away/ave-home-away/ave-home-away.component';
 import { HomeAwayTabsComponent } from "../home_away/home-away-tabs/home-away-tabs.component";
 import { HomeGroundsBarComponent } from "../grounds/home-grounds-bar/home-grounds-bar.component";
+import { GroundsTabsComponent } from "../grounds/grounds-tabs/grounds-tabs.component";
 
 @Component({
   selector: 'app-charts',
@@ -26,7 +27,8 @@ import { HomeGroundsBarComponent } from "../grounds/home-grounds-bar/home-ground
     InningsBarComponent,
     AveHomeAwayComponent,
     HomeAwayTabsComponent,
-    HomeGroundsBarComponent
+    HomeGroundsBarComponent,
+    GroundsTabsComponent
 ],
   templateUrl: './charts.component.html',
   styleUrl: './charts.component.scss'
