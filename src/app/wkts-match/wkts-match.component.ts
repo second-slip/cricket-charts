@@ -106,8 +106,13 @@ export class WktsMatchComponent {
     maintainAspectRatio: false,
     scales: {
       y: {
+        title: {
+          display: true,
+          align: 'center',
+          text: 'wickets per match'
+        },
         stacked: false
-      }
+      },
     },
     plugins: {
       legend: {
