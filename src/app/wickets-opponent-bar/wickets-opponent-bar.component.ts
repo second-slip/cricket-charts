@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
@@ -9,18 +9,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-wickets-opponent-bar',
-  standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
-  templateUrl: './wickets-opponent-bar.component.html',
-  styleUrl: './wickets-opponent-bar.component.scss'
+    selector: 'app-wickets-opponent-bar',
+    imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
+    templateUrl: './wickets-opponent-bar.component.html',
+    styleUrl: './wickets-opponent-bar.component.scss'
 })
 export class WicketsOpponentBarComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public chartPlugins = [ChartDataLabels];
@@ -71,11 +70,11 @@ export class WicketsOpponentBarComponent {
   public toggle5w(): void {
     if (this.wicketsData?.datasets[2].hidden) {
       this.wicketsData.datasets[2].hidden = false;
-      this.chart?.update();
+      this.chart()?.update();
       this.btnText.set('Hide 5w');
     } else {
       this.wicketsData.datasets[2].hidden = true;
-      this.chart?.update();
+      this.chart()?.update();
       this.btnText.set('Show 5w');
     }
   }

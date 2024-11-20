@@ -9,7 +9,6 @@ import { MatMenuModule } from '@angular/material/menu';
     selector: 'app-menu',
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
-    standalone: true,
     imports: [MatToolbarModule, MatButtonModule, RouterLink, RouterLinkActive, MatIconModule, MatMenuModule]
 })
 export class MenuComponent { }

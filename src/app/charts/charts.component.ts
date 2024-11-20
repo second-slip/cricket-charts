@@ -8,13 +8,12 @@ import { BowlingAveTabsComponent } from '../bowling-ave-tabs/bowling-ave-tabs.co
 import { YearBarComponent } from '../year-bar/year-bar.component';
 import { InningsBarComponent } from '../innings-bar/innings-bar.component';
 import { AveHomeAwayComponent } from '../home_away/ave-home-away/ave-home-away.component';
-import { HomeAwayTabsComponent } from "../home_away/home-away-tabs/home-away-tabs.component";
-import { HomeGroundsBarComponent } from "../grounds/home-grounds-bar/home-grounds-bar.component";
-import { GroundsTabsComponent } from "../grounds/grounds-tabs/grounds-tabs.component";
+import { HomeAwayTabsComponent } from '../home_away/home-away-tabs/home-away-tabs.component';
+import { HomeGroundsBarComponent } from '../grounds/home-grounds-bar/home-grounds-bar.component';
+import { GroundsTabsComponent } from '../grounds/grounds-tabs/grounds-tabs.component';
 
 @Component({
   selector: 'app-charts',
-  standalone: true,
   imports: [
     EconomyRateComponent,
     StrikeRateComponent,
@@ -25,12 +24,10 @@ import { GroundsTabsComponent } from "../grounds/grounds-tabs/grounds-tabs.compo
     WicketsOpponentBarComponent,
     YearBarComponent,
     InningsBarComponent,
-    AveHomeAwayComponent,
     HomeAwayTabsComponent,
-    HomeGroundsBarComponent,
-    GroundsTabsComponent
-],
+    GroundsTabsComponent,
+  ],
   templateUrl: './charts.component.html',
-  styleUrl: './charts.component.scss'
+  styleUrl: './charts.component.scss',
 })
-export class ChartsComponent { }
+export class ChartsComponent {}

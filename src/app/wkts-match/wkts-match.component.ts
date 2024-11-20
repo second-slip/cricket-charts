@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
@@ -8,20 +8,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-wkts-match',
-  standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
-  templateUrl: './wkts-match.component.html',
-  styleUrl: './wkts-match.component.scss'
+    selector: 'app-wkts-match',
+    imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
+    templateUrl: './wkts-match.component.html',
+    styleUrl: './wkts-match.component.scss'
 })
 export class WktsMatchComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(event: any) {
     //  console.log(event)
     // this.width = event;
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public btnText = signal('Hide wickets');
@@ -75,11 +74,11 @@ export class WktsMatchComponent {
   public toggleBar(): void {
     if (this.formatAnalysisData.chartData[0].hidden) {
       this.formatAnalysisData.chartData[0].hidden = false;
-      this.chart?.update();
+      this.chart()?.update();
       this.btnText.set('Hide wickets');
     } else {
       this.formatAnalysisData.chartData[0].hidden = true;
-      this.chart?.update();
+      this.chart()?.update();
       this.btnText.set('Show wickets');
     }
   }

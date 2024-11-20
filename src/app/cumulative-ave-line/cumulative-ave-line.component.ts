@@ -1,22 +1,21 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { DataFetchService } from '../data-fetch.service';
 
 @Component({
-  selector: 'app-cumulative-ave-line',
-  standalone: true,
-  imports: [BaseChartDirective],
-  templateUrl: './cumulative-ave-line.component.html',
-  styleUrl: './cumulative-ave-line.component.scss'
+    selector: 'app-cumulative-ave-line',
+    imports: [BaseChartDirective],
+    templateUrl: './cumulative-ave-line.component.html',
+    styleUrl: './cumulative-ave-line.component.scss'
 })
 export class CumulativeAveLineComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public loaded = signal(false);

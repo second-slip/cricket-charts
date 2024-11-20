@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
@@ -9,18 +9,17 @@ import { DataFetchService } from '../../data-fetch.service';
 import { IGroundAnalysisBar } from '../i-ground-analysis-bar';
 
 @Component({
-  selector: 'app-home-grounds-bar',
-  standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
-  templateUrl: './home-grounds-bar.component.html',
-  styleUrl: './home-grounds-bar.component.scss'
+    selector: 'app-home-grounds-bar',
+    imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
+    templateUrl: './home-grounds-bar.component.html',
+    styleUrl: './home-grounds-bar.component.scss'
 })
 export class HomeGroundsBarComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public chartPlugins = [ChartDataLabels];
@@ -73,11 +72,11 @@ export class HomeGroundsBarComponent {
   public toggle5w(): void {
     if (this.wicketsData?.datasets[2].hidden) {
       this.wicketsData.datasets[2].hidden = false;
-      this.chart?.update();
+      this.chart()?.update();
       this.btnText.set('Hide 5w');
     } else {
       this.wicketsData.datasets[2].hidden = true;
-      this.chart?.update();
+      this.chart()?.update();
       this.btnText.set('Show 5w');
     }
   }

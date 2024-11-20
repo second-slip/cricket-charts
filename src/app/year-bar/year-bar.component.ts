@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -9,18 +9,17 @@ import { IChartData } from '../i-chart-data.dto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
-  selector: 'app-year-bar',
-  standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
-  templateUrl: './year-bar.component.html',
-  styleUrl: './year-bar.component.scss'
+    selector: 'app-year-bar',
+    imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
+    templateUrl: './year-bar.component.html',
+    styleUrl: './year-bar.component.scss'
 })
 export class YearBarComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public chartPlugins = [ChartDataLabels];

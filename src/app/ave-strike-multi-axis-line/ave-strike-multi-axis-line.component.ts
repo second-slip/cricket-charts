@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, signal, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
@@ -6,18 +6,17 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
-  selector: 'app-ave-strike-multi-axis-line',
-  standalone: true,
-  imports: [BaseChartDirective],
-  templateUrl: './ave-strike-multi-axis-line.component.html',
-  styleUrl: './ave-strike-multi-axis-line.component.scss'
+    selector: 'app-ave-strike-multi-axis-line',
+    imports: [BaseChartDirective],
+    templateUrl: './ave-strike-multi-axis-line.component.html',
+    styleUrl: './ave-strike-multi-axis-line.component.scss'
 })
 export class AveStrikeMultiAxisLineComponent implements OnInit {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
   
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
   
   public chartPlugins = [ChartDataLabels];

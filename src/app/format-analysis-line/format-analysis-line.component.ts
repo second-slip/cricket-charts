@@ -1,22 +1,21 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { DataFetchService } from '../data-fetch.service';
 
 @Component({
-  selector: 'app-format-analysis-line',
-  standalone: true,
-  imports: [BaseChartDirective],
-  templateUrl: './format-analysis-line.component.html',
-  styleUrl: './format-analysis-line.component.scss'
+    selector: 'app-format-analysis-line',
+    imports: [BaseChartDirective],
+    templateUrl: './format-analysis-line.component.html',
+    styleUrl: './format-analysis-line.component.scss'
 })
 export class FormatAnalysisLineComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
   
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
   
   public loaded = signal(false);

@@ -1,13 +1,9 @@
 import { Component, signal } from '@angular/core';
-// import { MatButtonModule } from '@angular/material/button';
-import { AngularLogoComponent } from '../angular-logo/angular-logo.component';
 
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss'],
-    standalone: true,
-    imports: [AngularLogoComponent]
+    styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
   public message = signal('');

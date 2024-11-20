@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { ChartConfiguration, ChartData } from 'chart.js';
@@ -6,18 +6,17 @@ import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
 
 @Component({
-  selector: 'app-innings-bar',
-  standalone: true,
-  imports: [BaseChartDirective],// MatButtonModule, MatIconModule, MatTooltipModule],
-  templateUrl: './innings-bar.component.html',
-  styleUrl: './innings-bar.component.scss'
+    selector: 'app-innings-bar',
+    imports: [BaseChartDirective], // MatButtonModule, MatIconModule, MatTooltipModule],
+    templateUrl: './innings-bar.component.html',
+    styleUrl: './innings-bar.component.scss'
 })
 export class InningsBarComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public chartPlugins = [ChartDataLabels];

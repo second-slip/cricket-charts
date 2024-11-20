@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
@@ -6,18 +6,17 @@ import { DataFetchService } from '../data-fetch.service';
 import { map } from 'rxjs';
 
 @Component({
-  selector: 'app-age-analysis-line',
-  standalone: true,
-  imports: [BaseChartDirective],
-  templateUrl: './age-analysis-line.component.html',
-  styleUrl: './age-analysis-line.component.scss'
+    selector: 'app-age-analysis-line',
+    imports: [BaseChartDirective],
+    templateUrl: './age-analysis-line.component.html',
+    styleUrl: './age-analysis-line.component.scss'
 })
 export class AgeAnalysisLineComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
   
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public loaded = signal(false);

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, signal, viewChild } from '@angular/core';
 import { Chart, ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
@@ -9,18 +9,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-strike-rate',
-  standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
-  templateUrl: './strike-rate.component.html',
-  styleUrl: './strike-rate.component.scss'
+    selector: 'app-strike-rate',
+    imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
+    templateUrl: './strike-rate.component.html',
+    styleUrl: './strike-rate.component.scss'
 })
 export class StrikeRateComponent implements OnInit {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   private axis = signal(15);
@@ -123,7 +122,7 @@ export class StrikeRateComponent implements OnInit {
       }
     };
 
-    this.chart?.update();
+    this.chart()?.update();
   }
 
 

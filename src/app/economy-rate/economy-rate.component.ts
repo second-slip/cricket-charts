@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
@@ -8,18 +8,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-economy-rate',
-  standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatTooltipModule],
-  templateUrl: './economy-rate.component.html',
-  styleUrl: './economy-rate.component.scss'
+    selector: 'app-economy-rate',
+    imports: [BaseChartDirective, MatButtonModule, MatTooltipModule],
+    templateUrl: './economy-rate.component.html',
+    styleUrl: './economy-rate.component.scss'
 })
 export class EconomyRateComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public chartPlugins = [ChartDataLabels];

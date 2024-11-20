@@ -5,10 +5,9 @@ import { FormatAnalysisLineComponent } from "../format-analysis-line/format-anal
 import { AgeAnalysisLineComponent } from "../age-analysis-line/age-analysis-line.component";
 
 @Component({
-  selector: 'app-bowling-ave-tabs',
-  standalone: true,
-  imports: [MatTabsModule, CumulativeAveLineComponent, FormatAnalysisLineComponent, AgeAnalysisLineComponent],
-  templateUrl: './bowling-ave-tabs.component.html',
-  styleUrl: './bowling-ave-tabs.component.scss'
+    selector: 'app-bowling-ave-tabs',
+    imports: [MatTabsModule, CumulativeAveLineComponent, FormatAnalysisLineComponent, AgeAnalysisLineComponent],
+    templateUrl: './bowling-ave-tabs.component.html',
+    styleUrl: './bowling-ave-tabs.component.scss'
 })
 export class BowlingAveTabsComponent { }

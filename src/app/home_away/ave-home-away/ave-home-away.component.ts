@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, ViewChild } from '@angular/core';
+import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { DataFetchService } from '../../data-fetch.service';
@@ -8,19 +8,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-ave-home-away',
-  standalone: true,
-  imports: [BaseChartDirective, MatButtonModule, MatTooltipModule],
-  templateUrl: './ave-home-away.component.html',
-  styleUrl: './ave-home-away.component.scss'
+    selector: 'app-ave-home-away',
+    imports: [BaseChartDirective, MatButtonModule, MatTooltipModule],
+    templateUrl: './ave-home-away.component.html',
+    styleUrl: './ave-home-away.component.scss'
 })
 export class AveHomeAwayComponent {
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  readonly chart = viewChild(BaseChartDirective);
   public chartPlugins = [ChartDataLabels];
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize() {
-    this.chart?.chart?.resize();
+    this.chart()?.chart?.resize();
   }
 
   public loaded = signal(false);
