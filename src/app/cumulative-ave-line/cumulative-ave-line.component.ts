@@ -5,16 +5,19 @@ import { IChartData } from '../i-chart-data.dto';
 import { DataFetchService } from '../data-fetch.service';
 
 @Component({
-    selector: 'app-cumulative-ave-line',
-    imports: [BaseChartDirective],
-    templateUrl: './cumulative-ave-line.component.html',
-    styleUrl: './cumulative-ave-line.component.scss'
+  selector: 'app-cumulative-ave-line',
+  host: {
+    '(window:resize)': '_onResize($event)',
+  },
+  imports: [BaseChartDirective],
+  templateUrl: './cumulative-ave-line.component.html',
+  styleUrl: './cumulative-ave-line.component.scss',
 })
 export class CumulativeAveLineComponent {
   readonly chart = viewChild(BaseChartDirective);
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 
@@ -25,31 +28,34 @@ export class CumulativeAveLineComponent {
     datasets: [
       {
         data: [],
-        label: 'cumulative average'
+        label: 'cumulative average',
       },
       {
         data: [],
-        label: '3-point moving cumulative average'
+        label: '3-point moving cumulative average',
       },
-    ]
+    ],
   };
 
-  constructor(private readonly _service: DataFetchService) { }
+  constructor(private readonly _service: DataFetchService) {}
 
   ngOnInit(): void {
     this._getData();
   }
 
   private _getData(): void {
-    this._service.getCumulativeAverageSeries()
+    this._service
+      .getCumulativeAverageSeries()
       .pipe()
       .subscribe({
         next: (data: IChartData) => {
-          this.bowlingAverageData.labels = data.chartLabels,
-            this.bowlingAverageData.datasets[0].data = data.chartData[0],
-            this.bowlingAverageData.datasets[1].data = data.chartData[1]
+          (this.bowlingAverageData.labels = data.chartLabels),
+            (this.bowlingAverageData.datasets[0].data = data.chartData[0]),
+            (this.bowlingAverageData.datasets[1].data = data.chartData[1]);
         },
-        error: (e) => { console.log(e); }
+        error: (e) => {
+          console.log(e);
+        },
       });
 
     this.loaded.set(true);
@@ -61,8 +67,8 @@ export class CumulativeAveLineComponent {
     devicePixelRatio: 4,
     plugins: {
       legend: {
-        position: 'bottom'
-      }
+        position: 'bottom',
+      },
       // title: {
       //   display: true,
       //   text: 'Cumulative bowling average'
@@ -83,13 +89,13 @@ export class CumulativeAveLineComponent {
         display: true,
         position: 'right',
         ticks: {
-          display: false
+          display: false,
         },
         // grid line settings
         grid: {
           drawOnChartArea: false, // only want the grid lines for one axis to show up
         },
-      }
-    }
+      },
+    },
   };
 }

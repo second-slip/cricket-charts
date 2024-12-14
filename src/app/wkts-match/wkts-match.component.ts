@@ -8,18 +8,25 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-    selector: 'app-wkts-match',
-    imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
-    templateUrl: './wkts-match.component.html',
-    styleUrl: './wkts-match.component.scss'
+  selector: 'app-wkts-match',
+  imports: [
+    BaseChartDirective,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+  ],
+  host: {
+    '(window:resize)': '_onResize($event)',
+  },
+  templateUrl: './wkts-match.component.html', //,
+  // styleUrl: './wkts-match.component.scss',
 })
 export class WktsMatchComponent {
   readonly chart = viewChild(BaseChartDirective);
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize(event: any) {
-    //  console.log(event)
-    // this.width = event;
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
+    // alert(event.target.innerWidth);
     this.chart()?.chart?.resize();
   }
 
@@ -27,7 +34,8 @@ export class WktsMatchComponent {
   hideDelay = 2000;
   public loaded = signal(false);
 
-  public formatAnalysisData: IChartData = {  // ChartData<'bar'>
+  public formatAnalysisData: IChartData = {
+    // ChartData<'bar'>
     chartLabels: [],
     chartData: [
       {
@@ -37,7 +45,7 @@ export class WktsMatchComponent {
         // backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
         // stack: 'combined',
         type: 'bar',
-        order: 1
+        order: 1,
       },
       {
         data: [],
@@ -45,28 +53,28 @@ export class WktsMatchComponent {
         // borderColor: Utils.CHART_COLORS.blue,
         // backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
         type: 'line',
-        order: 0
+        order: 0,
       },
-    ]
+    ],
   };
 
-  constructor(private readonly _service: DataFetchService) { }
+  constructor(private readonly _service: DataFetchService) {}
 
   ngOnInit(): void {
     this._getData();
   }
 
   private _getData(): void {
-    this._service.getWicketsPerMatchDataSeries()
-      .subscribe({
-        next: (data: IChartData) => {
-          this.formatAnalysisData.chartLabels = data.chartLabels,
-            this.formatAnalysisData.chartData[0].data = data.chartData[0],
-            this.formatAnalysisData.chartData[1].data = data.chartData[1]
-        },
-        error: (e) => { console.log(e); }
-      });
-
+    this._service.getWicketsPerMatchDataSeries().subscribe({
+      next: (data: IChartData) => {
+        (this.formatAnalysisData.chartLabels = data.chartLabels),
+          (this.formatAnalysisData.chartData[0].data = data.chartData[0]),
+          (this.formatAnalysisData.chartData[1].data = data.chartData[1]);
+      },
+      error: (e) => {
+        console.log(e);
+      },
+    });
 
     this.loaded.set(true);
   }
@@ -84,20 +92,18 @@ export class WktsMatchComponent {
   }
 
   public toggleFullscreen(): void {
-    var chartEle = document.getElementById("gh");
+    var chartEle = document.getElementById('gh');
 
     if (document.fullscreenElement || document.fullscreenElement) {
       document?.exitFullscreen();
-      console.log('exit fullscreen')
-    }
-    else {
+      console.log('exit fullscreen');
+    } else {
       // @ts-ignore
-      screen.orientation.lock("landscape-primary");
+      screen.orientation.lock('landscape-primary');
       chartEle?.requestFullscreen();
-      console.log('enter fullscreen')
+      console.log('enter fullscreen');
     }
   }
-
 
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     devicePixelRatio: 4,
@@ -108,14 +114,14 @@ export class WktsMatchComponent {
         title: {
           display: true,
           align: 'center',
-          text: 'wickets per match'
+          text: 'wickets per match',
         },
-        stacked: false
+        stacked: false,
       },
     },
     plugins: {
       legend: {
-        position: 'bottom'
+        position: 'bottom',
       },
       // title: {
       //   display: true,
@@ -139,8 +145,6 @@ export class WktsMatchComponent {
       //   //   style: 'italic'
       //    }
       // }
-    }
+    },
   };
 }
-
-

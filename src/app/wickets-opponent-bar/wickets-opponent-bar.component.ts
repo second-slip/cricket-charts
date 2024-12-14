@@ -10,6 +10,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
     selector: 'app-wickets-opponent-bar',
+    host: {
+      '(window:resize)': '_onResize($event)',
+    },
     imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
     templateUrl: './wickets-opponent-bar.component.html',
     styleUrl: './wickets-opponent-bar.component.scss'
@@ -17,8 +20,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 export class WicketsOpponentBarComponent {
   readonly chart = viewChild(BaseChartDirective);
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 

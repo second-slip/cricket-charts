@@ -1,4 +1,10 @@
-import { Component, HostListener, OnInit, signal, viewChild } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  signal,
+  viewChild,
+} from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
@@ -6,19 +12,22 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
-    selector: 'app-ave-strike-multi-axis-line',
-    imports: [BaseChartDirective],
-    templateUrl: './ave-strike-multi-axis-line.component.html',
-    styleUrl: './ave-strike-multi-axis-line.component.scss'
+  selector: 'app-ave-strike-multi-axis-line',
+  host: {
+    '(window:resize)': '_onResize($event)',
+  },
+  imports: [BaseChartDirective],
+  templateUrl: './ave-strike-multi-axis-line.component.html',
+  styleUrl: './ave-strike-multi-axis-line.component.scss',
 })
 export class AveStrikeMultiAxisLineComponent implements OnInit {
   readonly chart = viewChild(BaseChartDirective);
-  
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
-  
+
   public chartPlugins = [ChartDataLabels];
   public loaded = signal(false);
 
@@ -28,41 +37,49 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
       {
         data: [],
         label: 'cumulative average',
-        yAxisID: 'y'
+        yAxisID: 'y',
       },
       {
         data: [],
         label: 'cumulative strke rate',
         yAxisID: 'y1',
-      }
-    ]
+      },
+    ],
   };
 
-  constructor(private readonly _service: DataFetchService) { }
+  constructor(private readonly _service: DataFetchService) {}
 
   ngOnInit(): void {
     this._getData();
   }
 
   private _getData(): void {
-    this._service.getCumulativeAverageSeries()
+    this._service
+      .getCumulativeAverageSeries()
       .pipe()
       .subscribe({
         next: (data: IChartData) => {
-          this.bowlingAverageStrikeData.labels = data.chartLabels,
-            this.bowlingAverageStrikeData.datasets[0].data = data.chartData[0]
+          (this.bowlingAverageStrikeData.labels = data.chartLabels),
+            (this.bowlingAverageStrikeData.datasets[0].data =
+              data.chartData[0]);
         },
-        error: (e) => { console.log(e); }
+        error: (e) => {
+          console.log(e);
+        },
       });
 
-    this._service.getCumulativeStrikeRateSeries()
+    this._service
+      .getCumulativeStrikeRateSeries()
       .pipe()
       .subscribe({
         next: (data: IChartData) => {
-          this.bowlingAverageStrikeData.labels = data.chartLabels,
-            this.bowlingAverageStrikeData.datasets[1].data = data.chartData[0]
+          (this.bowlingAverageStrikeData.labels = data.chartLabels),
+            (this.bowlingAverageStrikeData.datasets[1].data =
+              data.chartData[0]);
         },
-        error: (e) => { console.log(e); }
+        error: (e) => {
+          console.log(e);
+        },
       });
 
     this.loaded.set(true);
@@ -70,7 +87,7 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
     devicePixelRatio: 4,
-    responsive: true, 
+    responsive: true,
     maintainAspectRatio: false,
     plugins: {
       // title: {
@@ -82,7 +99,7 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
       //   text: 'JM Anderson',
       // },
       legend: {
-        position: 'bottom'
+        position: 'bottom',
       },
       datalabels: {
         borderRadius: 4,
@@ -95,12 +112,16 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
         // anchor: 'start',
         offset: 0,
         formatter: (val, ctx) => {
-          if ((ctx.dataIndex === this.bowlingAverageStrikeData.datasets[0].data.length - 1) && (ctx.datasetIndex === 0 || 1)) {
+          if (
+            ctx.dataIndex ===
+              this.bowlingAverageStrikeData.datasets[0].data.length - 1 &&
+            (ctx.datasetIndex === 0 || 1)
+          ) {
             return val;
           } else {
             return '';
           }
-        }
+        },
       },
     },
     scales: {
@@ -119,6 +140,6 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
           drawOnChartArea: false, // only want the grid lines for one axis to show up
         },
       },
-    }
+    },
   };
 }

@@ -9,16 +9,24 @@ import { DataFetchService } from '../../data-fetch.service';
 import { IGroundAnalysisBar } from '../i-ground-analysis-bar';
 
 @Component({
-    selector: 'app-home-grounds-bar',
-    imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
-    templateUrl: './home-grounds-bar.component.html',
-    styleUrl: './home-grounds-bar.component.scss'
+  selector: 'app-home-grounds-bar',
+  host: {
+    '(window:resize)': '_onResize($event)',
+  },
+  imports: [
+    BaseChartDirective,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+  ],
+  templateUrl: './home-grounds-bar.component.html',
+  styleUrl: './home-grounds-bar.component.scss',
 })
 export class HomeGroundsBarComponent {
   readonly chart = viewChild(BaseChartDirective);
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 
@@ -31,39 +39,42 @@ export class HomeGroundsBarComponent {
     datasets: [
       {
         data: [],
-        label: 'wickets'
+        label: 'wickets',
       },
       {
         data: [],
-        label: 'matches'
+        label: 'matches',
       },
       {
         data: [],
         label: 'fiveWickets',
-        hidden: true
-      }
-    ]
+        hidden: true,
+      },
+    ],
   };
 
-  constructor(private readonly _service: DataFetchService) { }
+  constructor(private readonly _service: DataFetchService) {}
 
   ngOnInit(): void {
     this._getData();
   }
 
   private _getData(): void {
-    this._service.getHomeGroundsData()
+    this._service
+      .getHomeGroundsData()
       .pipe()
       .subscribe({
         next: (data: IGroundAnalysisBar) => {
           // const i = this.wicketsData.datasets.findIndex(f => f.label === 'wickets');
           // alert(i);
-          this.wicketsData.labels = data.labels,
-            this.wicketsData.datasets[0].data = data.wickets,
-            this.wicketsData.datasets[1].data = data.matches,
-            this.wicketsData.datasets[2].data = data.fiveWickets
+          (this.wicketsData.labels = data.labels),
+            (this.wicketsData.datasets[0].data = data.wickets),
+            (this.wicketsData.datasets[1].data = data.matches),
+            (this.wicketsData.datasets[2].data = data.fiveWickets);
         },
-        error: (e) => { console.log(e); }
+        error: (e) => {
+          console.log(e);
+        },
       });
 
     this.loaded.set(true);
@@ -89,11 +100,11 @@ export class HomeGroundsBarComponent {
     plugins: {
       datalabels: {
         align: 'end',
-        anchor: 'end'
+        anchor: 'end',
       },
       legend: {
-        position: 'bottom'
-      }
-    }
+        position: 'bottom',
+      },
+    },
   };
 }

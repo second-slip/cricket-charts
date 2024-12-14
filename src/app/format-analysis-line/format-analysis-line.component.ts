@@ -6,6 +6,9 @@ import { DataFetchService } from '../data-fetch.service';
 
 @Component({
     selector: 'app-format-analysis-line',
+    host: {
+      '(window:resize)': '_onResize($event)',
+    },
     imports: [BaseChartDirective],
     templateUrl: './format-analysis-line.component.html',
     styleUrl: './format-analysis-line.component.scss'
@@ -13,8 +16,8 @@ import { DataFetchService } from '../data-fetch.service';
 export class FormatAnalysisLineComponent {
   readonly chart = viewChild(BaseChartDirective);
   
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
   

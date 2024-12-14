@@ -9,6 +9,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
     selector: 'app-ave-home-away',
+    host: {
+      '(window:resize)': '_onResize($event)',
+    },
     imports: [BaseChartDirective, MatButtonModule, MatTooltipModule],
     templateUrl: './ave-home-away.component.html',
     styleUrl: './ave-home-away.component.scss'
@@ -17,8 +20,8 @@ export class AveHomeAwayComponent {
   readonly chart = viewChild(BaseChartDirective);
   public chartPlugins = [ChartDataLabels];
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 

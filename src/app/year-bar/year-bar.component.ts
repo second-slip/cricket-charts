@@ -10,6 +10,9 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
     selector: 'app-year-bar',
+    host: {
+      '(window:resize)': '_onResize($event)',
+    },
     imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
     templateUrl: './year-bar.component.html',
     styleUrl: './year-bar.component.scss'
@@ -17,8 +20,8 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 export class YearBarComponent {
   readonly chart = viewChild(BaseChartDirective);
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void { 
     this.chart()?.chart?.resize();
   }
 

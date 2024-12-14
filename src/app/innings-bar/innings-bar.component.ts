@@ -6,16 +6,19 @@ import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
 
 @Component({
-    selector: 'app-innings-bar',
-    imports: [BaseChartDirective], // MatButtonModule, MatIconModule, MatTooltipModule],
-    templateUrl: './innings-bar.component.html',
-    styleUrl: './innings-bar.component.scss'
+  selector: 'app-innings-bar',
+  host: {
+    '(window:resize)': '_onResize($event)',
+  },
+  imports: [BaseChartDirective], // MatButtonModule, MatIconModule, MatTooltipModule],
+  templateUrl: './innings-bar.component.html',
+  styleUrl: './innings-bar.component.scss',
 })
 export class InningsBarComponent {
   readonly chart = viewChild(BaseChartDirective);
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 
@@ -29,38 +32,41 @@ export class InningsBarComponent {
       {
         data: [],
         label: 'innings',
-        yAxisID: 'y'
+        yAxisID: 'y',
       },
       {
         data: [],
         label: 'wickets',
-        yAxisID: 'y'
-      }
+        yAxisID: 'y',
+      },
       // {
       //   data: [25.21, 26.44, 28.68, 25.33],
       //   label: 'average',
       //   yAxisID: 'y1',
       //   hidden: true
       // }
-    ]
+    ],
   };
 
-  constructor(private readonly _service: DataFetchService) { }
+  constructor(private readonly _service: DataFetchService) {}
 
   ngOnInit(): void {
     this._getData();
   }
 
   private _getData(): void {
-    this._service.getMatchInningsAnalysis()
+    this._service
+      .getMatchInningsAnalysis()
       .pipe()
       .subscribe({
         next: (data: IChartData) => {
-          this.wicketsData.labels = data.chartLabels,
-            this.wicketsData.datasets[0].data = data.chartData[0],
-            this.wicketsData.datasets[1].data = data.chartData[1]
+          (this.wicketsData.labels = data.chartLabels),
+            (this.wicketsData.datasets[0].data = data.chartData[0]),
+            (this.wicketsData.datasets[1].data = data.chartData[1]);
         },
-        error: (e) => { console.log(e); }
+        error: (e) => {
+          console.log(e);
+        },
       });
 
     this.loaded.set(true);
@@ -74,8 +80,8 @@ export class InningsBarComponent {
       x: {
         title: {
           display: true,
-          text: 'Match innings'
-        }
+          text: 'Match innings',
+        },
       },
       y: {
         type: 'linear',
@@ -83,9 +89,9 @@ export class InningsBarComponent {
         position: 'left',
         title: {
           display: true,
-          text: 'Count of innings / wickets'
+          text: 'Count of innings / wickets',
         },
-      }//,
+      }, //,
       // y1: {
       //   type: 'linear',
       //   display: true,
@@ -102,12 +108,12 @@ export class InningsBarComponent {
         align: 'end',
         anchor: 'end',
         font: {
-          weight: 'bold'
-        }
+          weight: 'bold',
+        },
       },
       legend: {
-        position: 'bottom'
-      }
-    }
+        position: 'bottom',
+      },
+    },
   };
 }

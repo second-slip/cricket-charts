@@ -10,6 +10,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
     selector: 'app-strike-rate',
+    host: {
+      '(window:resize)': '_onResize($event)',
+    },
     imports: [BaseChartDirective, MatButtonModule, MatIconModule, MatTooltipModule],
     templateUrl: './strike-rate.component.html',
     styleUrl: './strike-rate.component.scss'
@@ -17,8 +20,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 export class StrikeRateComponent implements OnInit {
   readonly chart = viewChild(BaseChartDirective);
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+  //@HostListener('window:resize', ['$event.target.innerWidth'])
+  
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 

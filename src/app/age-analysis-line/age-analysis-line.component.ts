@@ -6,16 +6,19 @@ import { DataFetchService } from '../data-fetch.service';
 import { map } from 'rxjs';
 
 @Component({
-    selector: 'app-age-analysis-line',
-    imports: [BaseChartDirective],
-    templateUrl: './age-analysis-line.component.html',
-    styleUrl: './age-analysis-line.component.scss'
+  selector: 'app-age-analysis-line',
+  host: {
+    '(window:resize)': '_onResize($event)',
+  },
+  imports: [BaseChartDirective],
+  templateUrl: './age-analysis-line.component.html',
+  styleUrl: './age-analysis-line.component.scss',
 })
 export class AgeAnalysisLineComponent {
   readonly chart = viewChild(BaseChartDirective);
-  
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize() {
+
+  // @HostListener('window:resize', ['$event.target.innerWidth'])
+  private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 
@@ -25,27 +28,28 @@ export class AgeAnalysisLineComponent {
     datasets: [
       {
         data: [],
-        label: 'up to 35 years old'
+        label: 'up to 35 years old',
       },
       {
         data: [],
-        label: 'over 35 years old'
+        label: 'over 35 years old',
       },
-    ]
+    ],
   };
 
-  constructor(private readonly _service: DataFetchService) { }
+  constructor(private readonly _service: DataFetchService) {}
 
   ngOnInit(): void {
     this._getData();
   }
 
   private _getData(): void {
-    this._service.getAgeAnalysis()
+    this._service
+      .getAgeAnalysis()
       // .pipe(
       //   map((x: any) => {
       //     const numbers = x.chartData[0];
-      //     const numbersTimesTen = numbers.map((number: any) => 
+      //     const numbersTimesTen = numbers.map((number: any) =>
       //     {
       //       if (number === "NULL") { return null}
       //       else {
@@ -60,17 +64,17 @@ export class AgeAnalysisLineComponent {
       //   ))
       .subscribe({
         next: (data: IChartData) => {
-          this.ageAnalysisData.labels = data.chartLabels
-          this.ageAnalysisData.datasets[0].data = data.chartData[0],
-            this.ageAnalysisData.datasets[1].data = data.chartData[1]
+          this.ageAnalysisData.labels = data.chartLabels;
+          (this.ageAnalysisData.datasets[0].data = data.chartData[0]),
+            (this.ageAnalysisData.datasets[1].data = data.chartData[1]);
         },
-        error: (e) => { console.log(e); }
+        error: (e) => {
+          console.log(e);
+        },
       });
-
 
     this.loaded.set(true);
   }
-
 
   // constructor() {
   //   this.data = {
@@ -89,12 +93,13 @@ export class AgeAnalysisLineComponent {
   // }
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
-    responsive: true, maintainAspectRatio: false,
+    responsive: true,
+    maintainAspectRatio: false,
     devicePixelRatio: 4,
     plugins: {
       legend: {
-        position: 'bottom'
-      }
+        position: 'bottom',
+      },
       // title: {
       //   display: true,
       //   text: 'Cumulative average pre- and post-35 years old'
@@ -115,13 +120,13 @@ export class AgeAnalysisLineComponent {
         display: true,
         position: 'right',
         ticks: {
-          display: false
+          display: false,
         },
         // grid line settings
         grid: {
           drawOnChartArea: false, // only want the grid lines for one axis to show up
         },
-      }
-    }
+      },
+    },
   };
 }
