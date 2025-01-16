@@ -22,11 +22,11 @@ export class InningsBarComponent {
     this.chart()?.chart?.resize();
   }
 
-  public chartPlugins = [ChartDataLabels];
-  public btnText = signal('Show 5w');
-  public loaded = signal(false);
+  protected chartPlugins = [ChartDataLabels];
+  protected btnText = signal('Show 5w');
+  protected loaded = signal(false);
 
-  public wicketsData: ChartData<'bar'> = {
+  protected wicketsData: ChartData<'bar'> = {
     labels: [],
     datasets: [
       {
@@ -72,7 +72,7 @@ export class InningsBarComponent {
     this.loaded.set(true);
   }
 
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+  protected barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     devicePixelRatio: 4,

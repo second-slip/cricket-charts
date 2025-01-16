@@ -16,7 +16,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
   ],
   host: {
-    '(window:resize)': '_onResize($event)',
+    '(window:resize)': '_onResize($event)', //,
   },
   templateUrl: './wkts-match.component.html', //,
   // styleUrl: './wkts-match.component.scss',
@@ -30,11 +30,11 @@ export class WktsMatchComponent {
     this.chart()?.chart?.resize();
   }
 
-  public btnText = signal('Hide wickets');
-  hideDelay = 2000;
-  public loaded = signal(false);
+  protected  btnText = signal('Hide wickets');
+  protected  hideDelay = 2000;
+  protected  loaded = signal(false);
 
-  public formatAnalysisData: IChartData = {
+  protected  formatAnalysisData: IChartData = {
     // ChartData<'bar'>
     chartLabels: [],
     chartData: [
@@ -79,7 +79,7 @@ export class WktsMatchComponent {
     this.loaded.set(true);
   }
 
-  public toggleBar(): void {
+  protected  toggleBar(): void {
     if (this.formatAnalysisData.chartData[0].hidden) {
       this.formatAnalysisData.chartData[0].hidden = false;
       this.chart()?.update();
@@ -91,7 +91,7 @@ export class WktsMatchComponent {
     }
   }
 
-  public toggleFullscreen(): void {
+  protected  toggleFullscreen(): void {
     var chartEle = document.getElementById('gh');
 
     if (document.fullscreenElement || document.fullscreenElement) {
@@ -105,7 +105,7 @@ export class WktsMatchComponent {
     }
   }
 
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+  protected  barChartOptions: ChartConfiguration<'bar'>['options'] = {
     devicePixelRatio: 4,
     responsive: true,
     maintainAspectRatio: false,

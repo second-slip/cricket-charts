@@ -24,10 +24,10 @@ export class EconomyRateComponent {
     this.chart()?.chart?.resize();
   }
 
-  public chartPlugins = [ChartDataLabels];
-  public loaded = signal(false);
+  protected chartPlugins = [ChartDataLabels];
+  protected loaded = signal(false);
 
-  public bowlingEconomyData: ChartData<'line'> = {
+  protected bowlingEconomyData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
@@ -44,10 +44,10 @@ export class EconomyRateComponent {
     this._getData();
   }
 
-  public btnText = signal('Focus axis');
+  protected btnText = signal('Focus axis');
   private axis = signal(4.6);
 
-  public focusAxis(): void {
+  protected focusAxis(): void {
     if (this.axis() === 4) {
       this.axis.set(4.6);
       this.btnText.set('Focus axis');
@@ -126,7 +126,7 @@ export class EconomyRateComponent {
     this.loaded.set(true);
   }
 
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  protected lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     devicePixelRatio: 4,

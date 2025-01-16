@@ -25,11 +25,11 @@ export class WicketsOpponentBarComponent {
     this.chart()?.chart?.resize();
   }
 
-  public chartPlugins = [ChartDataLabels];
-  public btnText = signal('Show 5w');
-  public loaded = signal(false);
+  protected chartPlugins = [ChartDataLabels];
+  protected btnText = signal('Show 5w');
+  protected loaded = signal(false);
 
-  public wicketsData: ChartData<'bar'> = {
+  protected wicketsData: ChartData<'bar'> = {
     labels: [],
     datasets: [
       {
@@ -70,7 +70,7 @@ export class WicketsOpponentBarComponent {
     this.loaded.set(true);
   }
 
-  public toggle5w(): void {
+  protected toggle5w(): void {
     if (this.wicketsData?.datasets[2].hidden) {
       this.wicketsData.datasets[2].hidden = false;
       this.chart()?.update();
@@ -82,7 +82,7 @@ export class WicketsOpponentBarComponent {
     }
   }
 
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+  protected barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     devicePixelRatio: 4,

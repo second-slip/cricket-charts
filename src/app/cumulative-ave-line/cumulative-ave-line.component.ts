@@ -21,9 +21,9 @@ export class CumulativeAveLineComponent {
     this.chart()?.chart?.resize();
   }
 
-  public loaded = signal(false);
+  protected loaded = signal(false);
 
-  public bowlingAverageData: ChartData<'line'> = {
+  protected bowlingAverageData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
@@ -61,7 +61,7 @@ export class CumulativeAveLineComponent {
     this.loaded.set(true);
   }
 
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  protected lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     devicePixelRatio: 4,

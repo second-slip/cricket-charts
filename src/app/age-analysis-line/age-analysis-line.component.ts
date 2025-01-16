@@ -22,8 +22,8 @@ export class AgeAnalysisLineComponent {
     this.chart()?.chart?.resize();
   }
 
-  public loaded = signal(false);
-  public ageAnalysisData: ChartData<'line'> = {
+  protected loaded = signal(false);
+  protected ageAnalysisData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
@@ -92,7 +92,7 @@ export class AgeAnalysisLineComponent {
   //   }
   // }
 
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  protected lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     devicePixelRatio: 4,

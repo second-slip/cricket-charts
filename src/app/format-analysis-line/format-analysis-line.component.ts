@@ -21,8 +21,8 @@ export class FormatAnalysisLineComponent {
     this.chart()?.chart?.resize();
   }
   
-  public loaded = signal(false);
-  public formatAnalysisData: ChartData<'line'> = {
+  protected loaded = signal(false);
+  protected formatAnalysisData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
@@ -74,7 +74,7 @@ export class FormatAnalysisLineComponent {
   }
 
 
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  protected lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true, maintainAspectRatio: false,
     devicePixelRatio: 4,
     plugins: {

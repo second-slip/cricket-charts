@@ -18,16 +18,16 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class AveHomeAwayComponent {
   readonly chart = viewChild(BaseChartDirective);
-  public chartPlugins = [ChartDataLabels];
+  protected chartPlugins = [ChartDataLabels];
 
   // @HostListener('window:resize', ['$event.target.innerWidth'])
   private _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 
-  public loaded = signal(false);
+  protected loaded = signal(false);
 
-  public homeAwayAverageData: ChartData<'line'> = {
+  protected homeAwayAverageData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
@@ -47,10 +47,10 @@ export class AveHomeAwayComponent {
     this._getData();
   }
 
-  public btnText = signal('Focus axis');
+  protected btnText = signal('Focus axis');
   private axis = signal(120);
 
-  public focusAxis(): void {
+  protected focusAxis(): void {
     if (this.axis() === 70) {
       this.axis.set(120);
       this.btnText.set('Focus axis');
@@ -115,7 +115,7 @@ this.lineChartOptions = {
     this.loaded.set(true);
   }
 
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  protected lineChartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     devicePixelRatio: 4,

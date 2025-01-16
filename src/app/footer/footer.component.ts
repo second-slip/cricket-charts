@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
     styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  public message = signal('');
+  protected message = signal('');
 
   constructor() {
     const year = new Date().getFullYear().toString();

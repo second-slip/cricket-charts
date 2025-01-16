@@ -28,11 +28,11 @@ export class StrikeRateComponent implements OnInit {
 
   private axis = signal(15);
 
-  public chartPlugins = [ChartDataLabels];
-  public loaded = signal(false);
-  public btnText = signal('Focus axis');
+  protected chartPlugins = [ChartDataLabels];
+  protected loaded = signal(false);
+  protected btnText = signal('Focus axis');
 
-  public bowlingStrikeData: ChartData<'line'> = {
+  protected bowlingStrikeData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
@@ -63,7 +63,7 @@ export class StrikeRateComponent implements OnInit {
     this.loaded.set(true);
   }
 
-  public focusAxis(): void {
+  protected focusAxis(): void {
     if (this.axis() === 53) {
       this.axis.set(15);
       this.btnText.set('Focus axis');
@@ -130,7 +130,7 @@ export class StrikeRateComponent implements OnInit {
   }
 
 
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  protected lineChartOptions: ChartConfiguration<'line'>['options'] = {
     // onResize: () => {
     //   alert('k')
     //   this.chart?.chart?.resize();//.update();

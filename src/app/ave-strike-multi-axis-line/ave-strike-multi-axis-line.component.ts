@@ -28,10 +28,10 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
     this.chart()?.chart?.resize();
   }
 
-  public chartPlugins = [ChartDataLabels];
-  public loaded = signal(false);
+  protected chartPlugins = [ChartDataLabels];
+  protected loaded = signal(false);
 
-  public bowlingAverageStrikeData: ChartData<'line'> = {
+  protected bowlingAverageStrikeData: ChartData<'line'> = {
     labels: [],
     datasets: [
       {
@@ -85,7 +85,7 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
     this.loaded.set(true);
   }
 
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  protected lineChartOptions: ChartConfiguration<'line'>['options'] = {
     devicePixelRatio: 4,
     responsive: true,
     maintainAspectRatio: false,
