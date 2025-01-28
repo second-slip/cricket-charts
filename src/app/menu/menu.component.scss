@@ -1,69 +1,61 @@
-.nav-menu {
-    display: flex;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
+.mat-toolbar {
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
 }
 
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .title-button {
-    font-weight: bold;
-    font-size: medium;
+  font-weight: bold;
+  font-size: medium;
 }
 
-.activebutton {
-    // color: white;
-    // text-decoration: underline;
-    background-color: beige
+.active {
+  // text-decoration: underline;
+  background-color: aliceblue;
 }
 
 @media only screen and (max-width: 667px) {
-    .larger-screen-menu {
-        display: none;
-    }
+  .larger-screen-menu {
+    display: none;
+  }
 
-    .nav-menu {
-        padding: 0% 4%;
-    }
+  .mat-toolbar {
+    padding: 0% 4%;
+  }
 }
 
 @media only screen and (min-width: 668px) {
-    .smaller-screen-collapse-menu {
-        display: none;
-    }
+  .smaller-screen-collapse-menu {
+    display: none;
+  }
 
-    .nav-menu {
-        padding: 0% 10%;
-    }
+  .mat-toolbar {
+    padding: 0% 10%;
+  }
 }
 
 @media only screen and (min-width: 992px) {
-    .smaller-screen-collapse-menu {
-        display: none;
-    }
+  .smaller-screen-collapse-menu {
+    display: none;
+  }
 
-    .nav-menu {
-        padding: 0% 15%;
-    }
+  .mat-toolbar {
+    padding: 0% 15%;
+  }
 }
-
-
-
-
 
 // .action-buttons, .github-icon-button {
 //     display: flex;
 //     align-items: center;
 // }
 
-
-
-
 // @media only screen and (max-width: 768px) {
-//     .nav-menu {
+//     .mat-toolbar {
 //         align-items: center;
 //         justify-content: center;
 //         flex-direction: column;

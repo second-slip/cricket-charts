@@ -1,3 +1,14 @@
+@use "@angular/material" as mat;
+
+:root {
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: #ffffb3
+        // see mat-toolbar documentation for full list of tokens,
+    )
+  );
+}
+
 html,
 body {
     height: 100%;
