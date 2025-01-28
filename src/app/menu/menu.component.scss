@@ -1,4 +1,4 @@
-.mat-toolbar {
+mat-toolbar {
   display: flex;
   position: fixed;
   z-index: 9999;
@@ -24,7 +24,7 @@
     display: none;
   }
 
-  .mat-toolbar {
+  mat-toolbar {
     padding: 0% 4%;
   }
 }
@@ -34,7 +34,7 @@
     display: none;
   }
 
-  .mat-toolbar {
+  mat-toolbar {
     padding: 0% 10%;
   }
 }
@@ -44,7 +44,7 @@
     display: none;
   }
 
-  .mat-toolbar {
+  mat-toolbar {
     padding: 0% 15%;
   }
 }
@@ -55,7 +55,7 @@
 // }
 
 // @media only screen and (max-width: 768px) {
-//     .mat-toolbar {
+//     mat-toolbar {
 //         align-items: center;
 //         justify-content: center;
 //         flex-direction: column;
