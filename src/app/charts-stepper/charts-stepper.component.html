@@ -1,0 +1,32 @@
+<header class="centre">
+  <h1>JM Anderson</h1>
+  <h2>Test match career in charts</h2>
+</header>
+
+<mat-stepper orientation="vertical">
+  <mat-step>
+    <ng-template matStepLabel>Wickets per match</ng-template>
+    <ng-template matStepContent>
+      <!-- <p>This content was rendered lazily</p> -->
+      <app-wickets-match></app-wickets-match>
+      <button mat-button matStepperNext>Next</button>
+    </ng-template>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Striking rate</ng-template>
+    <ng-template matStepContent>
+      <!-- <p>This content was also rendered lazily</p> -->
+      <app-strike-rate></app-strike-rate>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </ng-template>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Economy rate</ng-template>
+    <ng-template matStepContent>
+      <!-- <p>This content was rendered lazily</p> -->
+      <app-economy-rate></app-economy-rate>
+      <button mat-button matStepperPrevious>Back</button>
+    </ng-template>
+  </mat-step>
+</mat-stepper>
