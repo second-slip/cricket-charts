@@ -1,0 +1,203 @@
+<p class="alert alert-danger small-screen-warning">
+  On small screen sizes, hold the device horizontally.
+</p>
+
+<!-- change class name -->
+<header class="centre-not">
+  <h1>JM Anderson</h1>
+  <h2>Test match career in charts</h2>
+</header>
+
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel [expanded]="false">
+    <!-- CHANGE BACK TO TRUE -->
+    <mat-expansion-panel-header>
+      <mat-panel-title> Wickets per match </mat-panel-title>
+      <mat-panel-description>
+        Counts of wickets taken per Test match and cumulative trend
+        <mat-icon>timeline</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-wickets-match></app-wickets-match>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="nextStep()">Next</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Striking rate </mat-panel-title>
+      <mat-panel-description>
+        Cumulative bowling striking rate
+        <mat-icon>timeline</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-strike-rate></app-strike-rate>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">Next</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Bowling average </mat-panel-title>
+      <mat-panel-description>
+        Cumulative bowling average with analysis
+        <mat-icon>timeline</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-bowling-ave-tabs></app-bowling-ave-tabs>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">End</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Opponents </mat-panel-title>
+      <mat-panel-description>
+        Matches & wickets taken by opposition
+        <mat-icon>bar_chart</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-wickets-opponent-bar></app-wickets-opponent-bar>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">End</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Economy rate </mat-panel-title>
+      <mat-panel-description>
+        Cumulative economy rate
+        <mat-icon>timeline</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-economy-rate></app-economy-rate>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">End</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Grounds </mat-panel-title>
+      <mat-panel-description>
+        Matches & wickets taken by ground
+        <mat-icon>bar_chart</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-grounds-tabs></app-grounds-tabs>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">End</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Home & abroad </mat-panel-title>
+      <mat-panel-description>
+        Cumulative statistics at home and abroad
+        <mat-icon>timeline</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-home-away-tabs></app-home-away-tabs>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">Next</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Innings </mat-panel-title>
+      <mat-panel-description>
+        Matches & wickets taken by innings
+        <mat-icon>bar_chart</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-innings-bar></app-innings-bar>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">End</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Average & striking </mat-panel-title>
+      <mat-panel-description>
+        Cumulative average and striking rate combined
+        <mat-icon>timeline</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-ave-strike-multi-axis-line></app-ave-strike-multi-axis-line>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">Next</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Years & years </mat-panel-title>
+      <mat-panel-description>
+        Matches, wickets taken & average by year
+        <mat-icon>bar_chart</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+      <app-year-bar></app-year-bar>
+    </ng-template>
+
+    <!-- <mat-action-row>
+          <button mat-button (click)="prevStep()">Previous</button>
+          <button mat-button (click)="nextStep()">End</button>
+        </mat-action-row> -->
+  </mat-expansion-panel>
+
+  <!-- END -->
+</mat-accordion>

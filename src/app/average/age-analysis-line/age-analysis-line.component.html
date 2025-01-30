@@ -1,0 +1,10 @@
+@if (loaded()) {
+<section class="tab-conent-top-padding">
+  <p class="centre">Better with age? Fast bowlers are typically past their peak after 35 years old.</p>
+
+  <canvas class="chart" baseChart [type]="'line'" [legend]="true" [datasets]="ageAnalysisData.datasets"
+    [labels]="ageAnalysisData.labels" [options]="lineChartOptions">
+  </canvas>
+
+</section>
+}

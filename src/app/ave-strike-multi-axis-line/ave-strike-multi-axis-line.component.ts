@@ -41,7 +41,7 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
       },
       {
         data: [],
-        label: 'cumulative strke rate',
+        label: 'cumulative striking rate',
         yAxisID: 'y1',
       },
     ],

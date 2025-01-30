@@ -4,23 +4,28 @@
   @include mat.toolbar-overrides(
     (
       container-background-color: #ffffb3
-        // see mat-toolbar documentation for full list of tokens,
+        // see mat-toolbar documentation for full list of tokens,,,
     )
   );
 }
 
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .centre {
-    text-align: center;
+  text-align: center;
 }
 
 // .divider {
@@ -28,150 +33,150 @@ body {
 // }
 
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .is-bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .footnote {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .alert {
-    flex-wrap: wrap;
-    padding: 2%;
-    color: black;
-    font-size: smaller;
+  flex-wrap: wrap;
+  padding: 2%;
+  color: black;
+  font-size: smaller;
 }
 
 .strong-title {
-    padding-right: 1%;
+  padding-right: 1%;
 }
 
 .alert-danger {
-    background-color: #f44336;
+  background-color: #f44336;
 }
 
 .alert-success {
-    background-color: #77ff33;
+  background-color: #77ff33;
 }
 
 .alert-info {
-    background-color: beige;
-    /* 'Robin egg blue' */
+  background-color: beige;
+  /* 'Robin egg blue' */
 }
 
 .icon-text {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .chart {
-    min-width: 425px;
-    /* overflow: visible; */
-    overflow-y: visible;
+  min-width: 425px;
+  /* overflow: visible; */
+  overflow-y: visible;
 }
 
 .chart-buttons {
-    margin: 1%;
+  margin: 1%;
 }
 
 .tab-conent-top-padding {
-    /* padding: 3%; */
-    padding-top: 3%;
+  /* padding: 3%; */
+  padding-top: 3%;
 }
 
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 666px) {
-    .chart {
-        max-height: 300px;
-        width: 100%;
-    }
+  .chart {
+    max-height: 300px;
+    width: 100%;
+  }
 
-    .container {
-        padding-top: 10%;
-        margin: 2% 1% 5%;
-        /* top / right/left / bottom */
-    }
+  .container {
+    padding-top: 10%;
+    margin: 2% 1% 5%;
+    /* top / right/left / bottom */
+  }
 
-    .small-screen-warning {
-        text-align: center;
-        font-weight: bold;
-        position: sticky;
-        z-index: 9999;
-        top: 55px;
-        padding: 10px 0px;
-    }
+  .small-screen-warning {
+    text-align: center;
+    font-weight: bold;
+    position: sticky;
+    z-index: 9999;
+    top: 55px;
+    padding: 10px 0px;
+  }
 
-    .divider {
-        margin: 10% 0%;
-    }
+  .divider {
+    margin: 10% 0%;
+  }
 }
 
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 667px) {
-    .chart {
-        max-height: 350px;
-        width: 100%;
-    }
+  .chart {
+    max-height: 350px;
+    width: 100%;
+  }
 
-    .container {
-        padding-top: 8%;
-        margin: 2% 4% 5%;
-        /* top / right/left / bottom */
-    }
+  .container {
+    padding-top: 8%;
+    margin: 2% 4% 5%;
+    /* top / right/left / bottom */
+  }
 
-    .small-screen-warning {
-        display: none;
-    }
+  .small-screen-warning {
+    display: none;
+  }
 
-    .divider {
-        margin: 10% 0%;
-    }
+  .divider {
+    margin: 10% 0%;
+  }
 }
 
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 769px) {
-    .chart {
-        max-height: 350px;
-        width: 100%;
-    }
+  .chart {
+    max-height: 350px;
+    width: 100%;
+  }
 
-    .container {
-        padding-top: 5%;
-        margin: 2% 4% 5%;
-        /* top / right/left / bottom */
-    }
+  .container {
+    padding-top: 5%;
+    margin: 2% 4% 5%;
+    /* top / right/left / bottom */
+  }
 
-    .small-screen-warning {
-        display: none;
-    }
+  .small-screen-warning {
+    display: none;
+  }
 
-    .divider {
-        margin: 5% 0%;
-    }
+  .divider {
+    margin: 5% 0%;
+  }
 }
 
 /* Larger devices (769px and up) */
 @media only screen and (min-width: 992px) {
-    .chart {
-        max-height: 525px;
-        width: 100%;
-    }
+  .chart {
+    max-height: 525px;
+    width: 100%;
+  }
 
-    .container {
-        padding-top: 6%;
-        margin: 2% 15% 5%;
-        /* top / right/left / bottom */
-    }
+  .container {
+    padding-top: 6%;
+    margin: 2% 15% 5%;
+    /* top / right/left / bottom */
+  }
 
-    .small-screen-warning {
-        display: none;
-    }
+  .small-screen-warning {
+    display: none;
+  }
 
-    .divider {
-        margin: 5% 0%;
-    }
+  .divider {
+    margin: 5% 0%;
+  }
 }

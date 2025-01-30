@@ -1,10 +1,16 @@
 @if (loaded()) {
-<h4 class="centre">Years and years</h4>
 
 <p class="centre">22 years of Test cricket: performance by year.</p>
 
-<canvas class="chart" baseChart [type]="'bar'" [legend]="true" [datasets]="wicketsData.datasets"
-    [labels]="wicketsData.labels" [options]="barChartOptions">
+<canvas
+  class="chart"
+  baseChart
+  [type]="'bar'"
+  [legend]="true"
+  [datasets]="wicketsData.datasets"
+  [labels]="wicketsData.labels"
+  [options]="barChartOptions"
+>
 </canvas>
 
 <!-- <section class="chart-buttons centre">

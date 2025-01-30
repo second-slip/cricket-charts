@@ -1,10 +1,16 @@
 @if (loaded()) {
-<h4 class="centre">Match innings analysis</h4>
+<p class="centre">Better at the start? Performance by match innings.</p>
 
-<p class="centre">Better at the start?  Performance by match innings.</p>
-
-<canvas class="chart" baseChart [type]="'bar'" [legend]="true" [datasets]="wicketsData.datasets"
-    [labels]="wicketsData.labels" [options]="barChartOptions" [plugins]="chartPlugins">
+<canvas
+  class="chart"
+  baseChart
+  [type]="'bar'"
+  [legend]="true"
+  [datasets]="wicketsData.datasets"
+  [labels]="wicketsData.labels"
+  [options]="barChartOptions"
+  [plugins]="chartPlugins"
+>
 </canvas>
 
 <!-- <section class="chart-buttons centre">
