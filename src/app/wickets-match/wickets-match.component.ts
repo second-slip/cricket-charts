@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, viewChild } from '@angular/core';
+import { Component, signal, viewChild } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-wkts-match',
+  selector: 'app-wickets-match',
   imports: [
     BaseChartDirective,
     MatButtonModule,
@@ -18,10 +18,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   host: {
     '(window:resize)': '_onResize($event)', //,
   },
-  templateUrl: './wkts-match.component.html', //,
-  // styleUrl: './wkts-match.component.scss',
+  templateUrl: './wickets-match.component.html',
 })
-export class WktsMatchComponent {
+export class WicketsMatchComponent {
   readonly chart = viewChild(BaseChartDirective);
 
   // @HostListener('window:resize', ['$event.target.innerWidth'])

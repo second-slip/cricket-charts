@@ -1,0 +1,29 @@
+@if (loaded()) {
+<!-- <h4 class="centre">Wickets per Test match</h4> -->
+<!-- <p>Wickets per Test match</p> -->
+
+<canvas
+  class="chart"
+  baseChart
+  [type]="'bar'"
+  [legend]="true"
+  [datasets]="formatAnalysisData.chartData"
+  [labels]="formatAnalysisData.chartLabels"
+  [options]="barChartOptions"
+>
+</canvas>
+
+<section class="chart-buttons centre">
+  <button
+    mat-stroked-button
+    matTooltip="Hide the wicket count bars to show the trend more clearly on a smaller y-axis scale."
+    [matTooltipHideDelay]="hideDelay"
+    (click)="toggleBar()"
+  >
+    {{ btnText() }}
+  </button>
+
+  <!-- <p class="footnote"><sup>1</sup> Hiding the the wicket count bars will show the trend more clearly (on a smaller
+    y-axis scale).</p> -->
+</section>
+}
