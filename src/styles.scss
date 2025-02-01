@@ -4,7 +4,7 @@
   @include mat.toolbar-overrides(
     (
       container-background-color: #ffffb3
-        // see mat-toolbar documentation for full list of tokens,,,
+        // see mat-toolbar documentation for full list of tokens,,,,,
     )
   );
 }
@@ -82,8 +82,12 @@ body {
 .chart-buttons {
   margin: 1%;
 }
+.collapse-accordion-buttons {
+  padding-bottom: 20px;
+  text-align: right;
+}
 
-.tab-conent-top-padding {
+.tab-content-top-padding {
   /* padding: 3%; */
   padding-top: 3%;
 }

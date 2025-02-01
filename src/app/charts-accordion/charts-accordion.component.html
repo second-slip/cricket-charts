@@ -2,11 +2,15 @@
   On small screen sizes, hold the device horizontally.
 </p>
 
-<!-- change class name -->
-<header class="centre-not">
+<header class="centre">
   <h1>JM Anderson</h1>
   <h2>Test match career in charts</h2>
 </header>
+
+<div class="collapse-accordion-buttons">
+  <button mat-button (click)="accordion().openAll()">Expand All</button>
+  <button mat-button (click)="accordion().closeAll()">Collapse All</button>
+</div>
 
 <mat-accordion class="example-headers-align" multi>
   <mat-expansion-panel [expanded]="false">
