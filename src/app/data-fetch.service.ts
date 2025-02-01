@@ -12,17 +12,16 @@ import {
   matchInningsAnalysisData,
   yearAnalysisData,
   homeAwayAverageData,
-  homeGroundData
+  homeGroundData,
 } from '../assets/chartData';
 import { IHomeAwayData } from './home_away/ave-home-away/i-hone-away-data.dto';
 import { IGroundAnalysisBar } from './grounds/i-ground-analysis-bar';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataFetchService {
-
-  constructor() { }
+  constructor() {}
 
   public getAveHomeAway(): Observable<IHomeAwayData> {
     return of(homeAwayAverageData);
