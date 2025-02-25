@@ -64,7 +64,7 @@ body {
 }
 
 .alert-info {
-  background-color: beige;
+  background-color: lightblue;
   /* 'Robin egg blue' */
 }
 
@@ -109,7 +109,7 @@ body {
     text-align: center;
     font-weight: bold;
     position: sticky;
-    z-index: 9999;
+    // z-index: 9999;
     top: 55px;
     padding: 10px 0px;
   }
@@ -183,4 +183,23 @@ body {
   .divider {
     margin: 5% 0%;
   }
+}
+
+
+
+
+
+.small-screen-info {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: left;
+
+  margin: 10px;
+}
+
+.small-screen-info-icon {
+  margin: 10px;
 }
