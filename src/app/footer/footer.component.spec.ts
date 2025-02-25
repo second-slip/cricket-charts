@@ -49,6 +49,10 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
 
     // Assert
-    expect(component.message()).toEqual(expected);
+    // expect(component.message()).toEqual(expected);
+
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelector('.content')?.textContent).toContain(expected);
   });
 });

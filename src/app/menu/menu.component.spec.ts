@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { NO_ERRORS_SCHEMA, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { provideRouter, Router } from '@angular/router';
-import { BlogComponent } from '../blog/blog.component';
+import { ChartsAccordionComponent } from '../charts-accordion/charts-accordion.component';
 
 
 describe('my-component', () => {
@@ -19,7 +19,7 @@ describe('my-component', () => {
   let router: Router;
 
   const routes = [
-    { path: 'login', component: BlogComponent }
+    { path: 'login', component: ChartsAccordionComponent }
   ];
 
 
