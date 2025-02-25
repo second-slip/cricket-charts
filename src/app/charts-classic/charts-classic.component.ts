@@ -9,6 +9,7 @@ import { StrikeRateComponent } from '../strike-rate/strike-rate.component';
 import { WicketsMatchComponent } from '../wickets-match/wickets-match.component';
 import { WicketsOpponentBarComponent } from '../wickets-opponent-bar/wickets-opponent-bar.component';
 import { YearBarComponent } from '../year-bar/year-bar.component';
+import { SmallScreenInfoComponent } from '../small-screen-info/small-screen-info.component';
 
 @Component({
   selector: 'app-charts-classic',
@@ -24,6 +25,7 @@ import { YearBarComponent } from '../year-bar/year-bar.component';
         InningsBarComponent,
         HomeAwayTabsComponent,
         GroundsTabsComponent,
+        SmallScreenInfoComponent
   ],
   templateUrl: './charts-classic.component.html'
 })

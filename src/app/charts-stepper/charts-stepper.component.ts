@@ -11,6 +11,7 @@ import { AveHomeAwayComponent } from '../home_away/ave-home-away/ave-home-away.c
 import { InningsBarComponent } from '../innings-bar/innings-bar.component';
 import { AveStrikeMultiAxisLineComponent } from '../ave-strike-multi-axis-line/ave-strike-multi-axis-line.component';
 import { YearBarComponent } from '../year-bar/year-bar.component';
+import { SmallScreenInfoComponent } from '../small-screen-info/small-screen-info.component';
 
 @Component({
   selector: 'app-charts-stepper',
@@ -27,6 +28,7 @@ import { YearBarComponent } from '../year-bar/year-bar.component';
     InningsBarComponent,
     AveStrikeMultiAxisLineComponent,
     YearBarComponent,
+    SmallScreenInfoComponent
   ],
   templateUrl: './charts-stepper.component.html',
   styleUrl: './charts-stepper.component.scss',

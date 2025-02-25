@@ -1,4 +1,4 @@
-import { Component, signal, viewChild } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,6 +12,7 @@ import { HomeAwayTabsComponent } from '../home_away/home-away-tabs/home-away-tab
 import { InningsBarComponent } from '../innings-bar/innings-bar.component';
 import { AveStrikeMultiAxisLineComponent } from '../ave-strike-multi-axis-line/ave-strike-multi-axis-line.component';
 import { YearBarComponent } from '../year-bar/year-bar.component';
+import { SmallScreenInfoComponent } from "../small-screen-info/small-screen-info.component";
 
 @Component({
   selector: 'app-charts-accordion',
@@ -29,7 +30,8 @@ import { YearBarComponent } from '../year-bar/year-bar.component';
     InningsBarComponent,
     AveStrikeMultiAxisLineComponent,
     YearBarComponent,
-  ],
+    SmallScreenInfoComponent
+],
   templateUrl: './charts-accordion.component.html',
   styleUrl: './charts-accordion.component.scss',
 })
