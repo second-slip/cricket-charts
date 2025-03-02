@@ -4,7 +4,7 @@
   @include mat.toolbar-overrides(
     (
       container-background-color: #ffffb3
-        // see mat-toolbar documentation for full list of tokens,,,,,
+        // see mat-toolbar documentation for full list of tokens,,,,,,
     )
   );
 }
@@ -109,9 +109,11 @@ body {
     text-align: center;
     font-weight: bold;
     position: sticky;
-    // z-index: 9999;
+    //z-index: 9999; //removed, otherwise the collapsed navbar is hidden behind the warning
     top: 55px;
     padding: 10px 0px;
+    //
+    opacity: 0.6;
   }
 
   .divider {
@@ -184,10 +186,6 @@ body {
     margin: 5% 0%;
   }
 }
-
-
-
-
 
 .small-screen-info {
   display: flex;
