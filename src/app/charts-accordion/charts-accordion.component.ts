@@ -12,7 +12,7 @@ import { HomeAwayTabsComponent } from '../home_away/home-away-tabs/home-away-tab
 import { InningsBarComponent } from '../innings-bar/innings-bar.component';
 import { AveStrikeMultiAxisLineComponent } from '../ave-strike-multi-axis-line/ave-strike-multi-axis-line.component';
 import { YearBarComponent } from '../year-bar/year-bar.component';
-import { SmallScreenInfoComponent } from "../small-screen-info/small-screen-info.component";
+import { SmallScreenInfoComponent } from '../small-screen-info/small-screen-info.component';
 
 @Component({
   selector: 'app-charts-accordion',
@@ -30,8 +30,8 @@ import { SmallScreenInfoComponent } from "../small-screen-info/small-screen-info
     InningsBarComponent,
     AveStrikeMultiAxisLineComponent,
     YearBarComponent,
-    SmallScreenInfoComponent
-],
+    SmallScreenInfoComponent,
+  ],
   templateUrl: './charts-accordion.component.html',
   styleUrl: './charts-accordion.component.scss',
 })
