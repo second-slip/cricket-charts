@@ -8,7 +8,7 @@ import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { NO_ERRORS_SCHEMA, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { NO_ERRORS_SCHEMA, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter, Router } from '@angular/router';
 import { ChartsAccordionComponent } from '../charts-accordion/charts-accordion.component';
 
@@ -27,7 +27,7 @@ describe('my-component', () => {
     await TestBed.configureTestingModule(
       {
         imports: [MatButtonModule, MatToolbarModule],
-        providers: [provideExperimentalZonelessChangeDetection(),
+        providers: [provideZonelessChangeDetection(),
         provideRouter(routes)
         ]
       })

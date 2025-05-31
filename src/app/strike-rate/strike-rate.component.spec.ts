@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StrikeRateComponent } from './strike-rate.component';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('StrikeRateComponent', () => {
   let component: StrikeRateComponent;
@@ -8,7 +9,8 @@ describe('StrikeRateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StrikeRateComponent]
+      imports: [StrikeRateComponent],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

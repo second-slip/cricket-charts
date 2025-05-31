@@ -4,7 +4,7 @@ import { FooterComponent } from './footer.component';
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 // import { MatButtonHarness } from '@angular/material/button/testing';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -13,7 +13,7 @@ describe('FooterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideExperimentalZonelessChangeDetection()]
+      providers: [provideZonelessChangeDetection()]
     });
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
