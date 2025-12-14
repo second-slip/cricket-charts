@@ -8,7 +8,7 @@ import {
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+// // import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
@@ -24,11 +24,11 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
   readonly chart = viewChild(BaseChartDirective);
 
   // @HostListener('window:resize', ['$event.target.innerWidth'])
-  private _onResize(event: any): void {
+  protected _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 
-  protected chartPlugins = [ChartDataLabels];
+  // //protected chartPlugins = [ChartDataLabels];
   protected loaded = signal(false);
 
   protected bowlingAverageStrikeData: ChartData<'line'> = {
@@ -92,7 +92,7 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
     plugins: {
       // title: {
       //   display: true,
-      //   text: 'Cumulative bowling avaerage & strike rate'
+      //   text: 'Cumulative bowling average & strike rate'
       // },
       // subtitle: {
       //   display: true,
@@ -101,28 +101,28 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
       legend: {
         position: 'bottom',
       },
-      datalabels: {
-        borderRadius: 4,
-        color: 'black',
-        // font: {
-        //   weight: 'bold'
-        // },
-        padding: 6,
-        align: 'top',
-        // anchor: 'start',
-        offset: 0,
-        formatter: (val, ctx) => {
-          if (
-            ctx.dataIndex ===
-              this.bowlingAverageStrikeData.datasets[0].data.length - 1 &&
-            (ctx.datasetIndex === 0 || 1)
-          ) {
-            return val;
-          } else {
-            return '';
-          }
-        },
-      },
+      // datalabels: {
+      //   borderRadius: 4,
+      //   color: 'black',
+      //   // font: {
+      //   //   weight: 'bold'
+      //   // },
+      //   padding: 6,
+      //   align: 'top',
+      //   // anchor: 'start',
+      //   offset: 0,
+      //   formatter: (val, ctx) => {
+      //     if (
+      //       ctx.dataIndex ===
+      //         this.bowlingAverageStrikeData.datasets[0].data.length - 1 &&
+      //       (ctx.datasetIndex === 0 || 1)
+      //     ) {
+      //       return val;
+      //     } else {
+      //       return '';
+      //     }
+      //   },
+      // },
     },
     scales: {
       y: {

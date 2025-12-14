@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit, signal, viewChild } from '@angular/cor
 import { Chart, ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFetchService } from '../data-fetch.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,7 +28,7 @@ export class StrikeRateComponent implements OnInit {
 
   private axis = signal(15);
 
-  protected chartPlugins = [ChartDataLabels];
+  //protected chartPlugins = [ChartDataLabels];
   protected loaded = signal(false);
   protected btnText = signal('Focus axis');
 
@@ -104,17 +104,17 @@ export class StrikeRateComponent implements OnInit {
         legend: {
           position: 'bottom'
         },
-        datalabels: {
-          borderRadius: 4,
-          color: 'black',
-          // font: {
-          //   weight: 'bold'
-          // },
-          padding: 6,
-          align: 'start',
-          anchor: 'start',
-          formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
-        },
+        // datalabels: {
+        //   borderRadius: 4,
+        //   color: 'black',
+        //   // font: {
+        //   //   weight: 'bold'
+        //   // },
+        //   padding: 6,
+        //   align: 'start',
+        //   anchor: 'start',
+        //   formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
+        // },
         // title: {
         //   display: true,
         //   text: 'Strike rate'
@@ -161,14 +161,14 @@ export class StrikeRateComponent implements OnInit {
       legend: {
         position: 'bottom'
       },
-      datalabels: {
-        borderRadius: 4,
-        color: 'black',
-        padding: 6,
-        align: 'start',
-        anchor: 'start',
-        formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
-      },
+      // datalabels: {
+      //   borderRadius: 4,
+      //   color: 'black',
+      //   padding: 6,
+      //   align: 'start',
+      //   anchor: 'start',
+      //   formatter: (val, ctx) => ctx.dataIndex === this.bowlingStrikeData.datasets[0].data.length - 1 ? val : ''
+      // },
       // title: {
       //   display: true,
       //   text: 'Strike rate'

@@ -3,7 +3,7 @@ import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
 import { DataFetchService } from '../data-fetch.service';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+// // import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -24,7 +24,7 @@ export class EconomyRateComponent {
     this.chart()?.chart?.resize();
   }
 
-  protected chartPlugins = [ChartDataLabels];
+  //protected chartPlugins = [ChartDataLabels];
   protected loaded = signal(false);
 
   protected bowlingEconomyData: ChartData<'line'> = {
@@ -64,22 +64,22 @@ export class EconomyRateComponent {
         legend: {
           position: 'bottom',
         },
-        datalabels: {
-          borderRadius: 4,
-          color: 'black',
-          font: {
-            weight: 'bold',
-          },
-          padding: {},
-          offset: 1,
-          align: 'top',
-          anchor: 'end',
-          formatter: (val, ctx) =>
-            ctx.dataIndex ===
-            this.bowlingEconomyData.datasets[0].data.length - 1
-              ? val
-              : '',
-        },
+        // datalabels: {
+        //   borderRadius: 4,
+        //   color: 'black',
+        //   font: {
+        //     weight: 'bold',
+        //   },
+        //   padding: {},
+        //   offset: 1,
+        //   align: 'top',
+        //   anchor: 'end',
+        //   formatter: (val, ctx) =>
+        //     ctx.dataIndex ===
+        //     this.bowlingEconomyData.datasets[0].data.length - 1
+        //       ? val
+        //       : '',
+        // },
       },
       scales: {
         y: {
@@ -134,21 +134,21 @@ export class EconomyRateComponent {
       legend: {
         position: 'bottom',
       },
-      datalabels: {
-        borderRadius: 4,
-        color: 'black',
-        font: {
-          weight: 'bold',
-        },
-        padding: {},
-        offset: 1,
-        align: 'top',
-        anchor: 'end',
-        formatter: (val, ctx) =>
-          ctx.dataIndex === this.bowlingEconomyData.datasets[0].data.length - 1
-            ? val
-            : '',
-      },
+      // datalabels: {
+      //   borderRadius: 4,
+      //   color: 'black',
+      //   font: {
+      //     weight: 'bold',
+      //   },
+      //   padding: {},
+      //   offset: 1,
+      //   align: 'top',
+      //   anchor: 'end',
+      //   formatter: (val, ctx) =>
+      //     ctx.dataIndex === this.bowlingEconomyData.datasets[0].data.length - 1
+      //       ? val
+      //       : '',
+      // },
     },
     scales: {
       y: {

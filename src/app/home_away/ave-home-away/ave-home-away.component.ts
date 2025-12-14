@@ -3,7 +3,7 @@ import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { DataFetchService } from '../../data-fetch.service';
 import { IHomeAwayData } from './i-hone-away-data.dto';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -18,7 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class AveHomeAwayComponent {
   readonly chart = viewChild(BaseChartDirective);
-  protected chartPlugins = [ChartDataLabels];
+  //protected chartPlugins = [ChartDataLabels];
 
   // @HostListener('window:resize', ['$event.target.innerWidth'])
   protected _onResize(event: any): void {
@@ -67,23 +67,23 @@ this.lineChartOptions = {
     legend: {
       position: 'bottom'
     },
-    datalabels: {
-      borderRadius: 4,
-      color: 'black',
-      font: {
-        weight: 'bold'
-      },
-      padding: 6,
-      align: 'top',
-      anchor: 'start',
-      formatter: (val, ctx) => {
-        if ((ctx.dataIndex === this.homeAwayAverageData.datasets[0].data.length - 1) && (ctx.datasetIndex === 0) || (ctx.dataIndex === this.homeAwayAverageData.datasets[1].data.length - 1) && (ctx.datasetIndex === 1)) {
-          return val;
-        } else {
-          return '';
-        }
-      }
-    }
+    // datalabels: {
+    //   borderRadius: 4,
+    //   color: 'black',
+    //   font: {
+    //     weight: 'bold'
+    //   },
+    //   padding: 6,
+    //   align: 'top',
+    //   anchor: 'start',
+    //   formatter: (val, ctx) => {
+    //     if ((ctx.dataIndex === this.homeAwayAverageData.datasets[0].data.length - 1) && (ctx.datasetIndex === 0) || (ctx.dataIndex === this.homeAwayAverageData.datasets[1].data.length - 1) && (ctx.datasetIndex === 1)) {
+    //       return val;
+    //     } else {
+    //       return '';
+    //     }
+    //   }
+    // }
   },
   scales: {
     y: {
@@ -123,23 +123,23 @@ this.lineChartOptions = {
       legend: {
         position: 'bottom'
       },
-      datalabels: {
-        borderRadius: 4,
-        color: 'black',
-        font: {
-          weight: 'bold'
-        },
-        padding: 6,
-        align: 'top',
-        anchor: 'start',
-        formatter: (val, ctx) => {
-          if ((ctx.dataIndex === this.homeAwayAverageData.datasets[0].data.length - 1) && (ctx.datasetIndex === 0) || (ctx.dataIndex === this.homeAwayAverageData.datasets[1].data.length - 1) && (ctx.datasetIndex === 1)) {
-            return val;
-          } else {
-            return '';
-          }
-        }
-      }
+      // datalabels: {
+      //   borderRadius: 4,
+      //   color: 'black',
+      //   font: {
+      //     weight: 'bold'
+      //   },
+      //   padding: 6,
+      //   align: 'top',
+      //   anchor: 'start',
+      //   formatter: (val, ctx) => {
+      //     if ((ctx.dataIndex === this.homeAwayAverageData.datasets[0].data.length - 1) && (ctx.datasetIndex === 0) || (ctx.dataIndex === this.homeAwayAverageData.datasets[1].data.length - 1) && (ctx.datasetIndex === 1)) {
+      //       return val;
+      //     } else {
+      //       return '';
+      //     }
+      //   }
+      // }
     },
     scales: {
       y: {
