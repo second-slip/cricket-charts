@@ -24,7 +24,7 @@ export class WicketsMatchComponent {
   readonly chart = viewChild(BaseChartDirective);
 
   // @HostListener('window:resize', ['$event.target.innerWidth'])
-  private _onResize(event: any): void {
+  protected _onResize(event: any): void {
     // alert(event.target.innerWidth);
     this.chart()?.chart?.resize();
   }

@@ -21,7 +21,7 @@ export class WicketsOpponentBarComponent {
   readonly chart = viewChild(BaseChartDirective);
 
   // @HostListener('window:resize', ['$event.target.innerWidth'])
-  private _onResize(event: any): void {
+  protected _onResize(event: any): void {
     this.chart()?.chart?.resize();
   }
 
