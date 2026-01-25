@@ -3,7 +3,7 @@ import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { DataFetchService } from '../../data-fetch.service';
 import { IHomeAwayData } from './i-hone-away-data.dto';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -18,7 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class AveHomeAwayComponent {
   readonly chart = viewChild(BaseChartDirective);
-  //protected chartPlugins = [ChartDataLabels];
+  
 
   // @HostListener('window:resize', ['$event.target.innerWidth'])
   protected _onResize(event: any): void {

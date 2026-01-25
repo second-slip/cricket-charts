@@ -1,6 +1,6 @@
 import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
@@ -22,7 +22,7 @@ export class InningsBarComponent {
     this.chart()?.chart?.resize();
   }
 
-  //protected chartPlugins = [ChartDataLabels];
+  
   protected btnText = signal('Show 5w');
   protected loaded = signal(false);
 

@@ -6,7 +6,7 @@ import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 
 @Component({
     selector: 'app-year-bar',
@@ -25,7 +25,7 @@ export class YearBarComponent {
     this.chart()?.chart?.resize();
   }
 
-  //protected chartPlugins = [ChartDataLabels];
+  
   protected btnText = signal('Show 5w');
   protected loaded = signal(false);
 

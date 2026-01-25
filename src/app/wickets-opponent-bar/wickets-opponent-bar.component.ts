@@ -2,7 +2,7 @@ import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
 import { BaseChartDirective } from 'ng2-charts';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import { DataFetchService } from '../data-fetch.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,7 +30,6 @@ export class WicketsOpponentBarComponent {
     this.chart()?.chart?.resize();
   }
 
-  //protected chartPlugins = [ChartDataLabels];
   protected btnText = signal('Show 5w');
   protected loaded = signal(false);
 

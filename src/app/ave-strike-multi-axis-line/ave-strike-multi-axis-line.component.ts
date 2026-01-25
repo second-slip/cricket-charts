@@ -8,7 +8,6 @@ import {
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { DataFetchService } from '../data-fetch.service';
 import { IChartData } from '../i-chart-data.dto';
-// // import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
@@ -28,7 +27,7 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
     this.chart()?.chart?.resize();
   }
 
-  // //protected chartPlugins = [ChartDataLabels];
+  // 
   protected loaded = signal(false);
 
   protected bowlingAverageStrikeData: ChartData<'line'> = {

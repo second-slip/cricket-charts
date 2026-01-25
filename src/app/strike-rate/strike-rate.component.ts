@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit, signal, viewChild } from '@angular/cor
 import { Chart, ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import { DataFetchService } from '../data-fetch.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,7 +28,7 @@ export class StrikeRateComponent implements OnInit {
 
   private axis = signal(15);
 
-  //protected chartPlugins = [ChartDataLabels];
+  
   protected loaded = signal(false);
   protected btnText = signal('Focus axis');
 

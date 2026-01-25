@@ -1,7 +1,7 @@
 import { Component, HostListener, signal, viewChild } from '@angular/core';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -30,7 +30,7 @@ export class HomeGroundsBarComponent {
     this.chart()?.chart?.resize();
   }
 
-  //protected chartPlugins = [ChartDataLabels];
+  
   protected btnText = signal('Show 5w');
   protected loaded = signal(false);
 
